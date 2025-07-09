@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leads Cadastrados | SacadaWeb</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 font-sans" style="font-family: 'DM Sans', sans-serif;">
+
+  <div class="container mx-auto p-8">
+    <header class="mb-8 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-gray-800">Leads - SacadaWeb</h1>
+      <a href="{{ url_for('home') }}" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition-colors">
+        &larr; Voltar
+      </a>
+    </header>
+
+    <div class="overflow-x-auto bg-white rounded-lg shadow">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">ID</th>
+            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">Nome</th>
+            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">Empresa</th>
+            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">WhatsApp</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {% for lead in leads %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4 text-sm text-gray-900">{{ lead.id }}</td>
+            <td class="px-6 py-4 text-sm text-gray-700">{{ lead.nome }}</td>
+            <td class="px-6 py-4 text-sm text-gray-700">{{ lead.empresa }}</td>
+            <td class="px-6 py-4 text-sm text-gray-700">{{ lead.whatsapp }}</td>
+          </tr>
+          {% else %}
+            <tr>
+              <td colspan="4" class="px-6 py-10 text-center text-gray-500">Nenhum lead cadastrado ainda.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

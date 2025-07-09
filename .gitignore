@@ -1,0 +1,14 @@
+ Arquivos de ambiente - NUNCA envie para o GitHub!
+.env
+
+# Banco de dados SQLite
+*.db
+*.db-journal*
+
+# Cache e arquivos compilados do Python
+__pycache__/
+*.pyc
+
+# Outras pastas de ambiente virtual (opcional, mas boa prática)
+venv/
+.venv/
