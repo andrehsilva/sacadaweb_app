@@ -252,7 +252,34 @@
   </div>
 </section>
 
-    <section class="py-12 bg-slate-50">
+<section class="bg-slate-50 text-gray-900 py-24">
+      <div class="container mx-auto px-6">
+        
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2 flex justify-center">
+            <img src="{{ url_for('static', filename='images/1.png') }}" alt="Fluxo de automação escolar" class="rounded-2xl shadow-xl max-w-full w-[480px] floating">
+          </div>
+          <div class="lg:w-1/2">
+            <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+          AUTOMATIZAÇÃO DE TAREFAS
+        </span>
+            <h2 class="text-4xl md:text-4xl font-bold leading-tight mb-6">Automatize processos com <span class="text-primary-600 font-extrabold">eficiência</span></h2>
+            <p class="text-lg text-gray-700 mb-8">Conecte Drive, Planilhas e outras ferramentas à IA para agilizar a rotina, eliminando retrabalho e tarefas manuais.</p>
+            <ul class="space-y-3 text-base text-gray-800">
+              <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Integração com sistemas internos</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Fluxos automatizados com IA</li>
+              <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Acesso e envio de dados via Drive, WhatsApp e mais</li>
+            </ul>
+            <div class="mt-8">
+              <a href="#contato" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">Falar com um especialista</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="py-12 bg-slate-100">
         <div class="container mx-auto px-6">
             <p class="text-center text-sm font-semibold text-gray-500 tracking-wider mb-6">
                 INTEGRAMOS COM AS FERRAMENTAS QUE VOCÊ JÁ USA
@@ -266,7 +293,7 @@
             </div>
         </div>
     </section>
-
+ -->
 
     <section id="como-funciona" class="py-20 md:py-28 px-6 bg-slate-100">
         <div class="container mx-auto">
@@ -328,6 +355,11 @@
                           <input type="tel" id="whatsapp" name="whatsapp" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-600" required>
                       </div>
                       <div>
+                      <label for="email" class="block text-gray-700 font-medium mb-2">E-mail profissional</label>
+                        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-600" placeholder="seu@escola.com" required>
+                        <span id="email-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira um e-mail válido.</span>
+                      </div>
+                      <div>
                           <button type="submit" class="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all transform hover:scale-105">
                               Agendar Análise Gratuita
                           </button>
@@ -385,7 +417,7 @@
 
   </main>
 
-  <footer class="bg-gray-900 text-gray-400 py-12">
+  <footer class="bg-gray-700 text-gray-400 py-12">
     <div class="container mx-auto px-6 text-center">
         <div class="mb-4">
             <a href="#" class="text-white text-lg font-semibold">SacadaWeb</a>

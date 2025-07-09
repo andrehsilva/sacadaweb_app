@@ -31,6 +31,7 @@ class Lead(db.Model):
     nome = db.Column(db.String(100), nullable=False)
     empresa = db.Column(db.String(100), nullable=False)
     whatsapp = db.Column(db.String(20), nullable=False, unique=True) # WhatsApp como identificador único
+    email = db.Column(db.String(120), nullable=False, unique=True)
 
     def __repr__(self):
         return f'<Lead {self.nome} - {self.empresa}>'
@@ -56,6 +57,7 @@ def submit_lead():
     nome = form_data.get('nome')
     empresa = form_data.get('empresa')
     whatsapp_raw = form_data.get('whatsapp', '')
+    email = form_data.get('email')
 
     if not all([nome, empresa, whatsapp_raw]):
         return jsonify({'status': 'error', 'message': 'Todos os campos são obrigatórios.'}), 400
@@ -66,9 +68,12 @@ def submit_lead():
         
     if Lead.query.filter_by(whatsapp=whatsapp_raw).first():
         return jsonify({'status': 'error', 'message': 'Este número de WhatsApp já foi cadastrado.'}), 400
+    
+    if Lead.query.filter_by(email=email).first():
+        return jsonify({'status': 'error', 'message': 'Este e-mail já foi cadastrado.'}), 400
 
     try:
-        new_lead = Lead(nome=nome, empresa=empresa, whatsapp=whatsapp_raw)
+        new_lead = Lead(nome=nome, empresa=empresa, whatsapp=whatsapp_raw, email=email)
         db.session.add(new_lead)
         db.session.commit()
         print(f"Novo lead salvo: {nome}, Empresa: {empresa}")
