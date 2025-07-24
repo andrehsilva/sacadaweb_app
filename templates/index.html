@@ -205,38 +205,63 @@
     <section id="solucao-chefe" class="py-20 md:py-28 px-6 bg-white">
   <div class="container mx-auto">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="flex justify-center">
+      <div class="flex justify-center p-4">
         <div class="relative w-full max-w-sm floating">
-          <div class="bg-white rounded-2xl shadow-2xl border overflow-hidden w-full mx-auto">
+          <div class="bg-white rounded-2xl shadow-2xl border overflow-hidden">
+
             <div class="bg-primary-600 p-3 text-white flex items-center">
               <div class="flex-shrink-0">
-                <img src="https://ui-avatars.com/api/?name=Sua+Loja&background=15803d&color=fff&size=40"
-                  alt="Avatar Loja" class="rounded-full w-8 h-8">
+                <img 
+                  src="https://ui-avatars.com/api/?name=ME&background=15803d&color=fff&size=40"
+                  alt="Avatar do Motor de Eficiência" 
+                  class="rounded-full w-8 h-8"
+                >
               </div>
-              <div class="ml-3">
+              <div class="ml-3 leading-tight">
                 <p class="font-semibold">Motor de Eficiência</p>
-                <p class="text-xs opacity-80">Ativo</p>
+                <p class="text-xs opacity-80">Online</p>
               </div>
             </div>
-            <div class="p-4 space-y-3">
+
+            <div class="p-4 space-y-3 flex flex-col h-96 overflow-y-auto">
               <div class="bg-gray-100 rounded-lg p-3 text-sm text-gray-800 max-w-[85%] self-start">
-                <strong>[Processo Automatizado 1]</strong> Relatório de performance diário gerado e enviado para a diretoria.
+                <p><strong>[Diretor]</strong> Olá, assistente, como está o dia de hoje?</p>
               </div>
-              <div class="flex justify-end">
-                <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%]">
-                  <strong>[Processo Automatizado 2]</strong> Novo lead do site qualificado e inserido no CRM com as tags corretas.
+
+              <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
+                <p><strong>[Processo Automatizado 1]</strong> Relatório de performance diário gerado e enviado para a diretoria.</p>
+              </div>
+
+              <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
+                <p><strong>[Processo Automatizado 2]</strong> Novo lead do site qualificado e inserido no CRM com as tags corretas.</p>
+              </div>
+
+              <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
+                <p><strong>[Processo Automatizado 3]</strong> Dados da Planilha de Custos atualizados com base nos e-mails recebidos.</p>
+              </div>
+
+              <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
+                <p><strong>[Processo Automatizado 4]</strong> Link para agendamento de reunião enviado ao lead qualificado.</p>
+              </div>
+            
+              <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
+                <div class="flex items-center">
+                  <svg class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Operação otimizada!</span>
                 </div>
               </div>
-              <div class="bg-gray-100 rounded-lg p-3 text-sm text-gray-800 max-w-[85%] self-start">
-                <strong>[Processo Automatizado 3]</strong> Dados da Planilha de Custos atualizados com base nos e-mails recebidos.
-              </div>
             </div>
+
             <div class="border-t p-3 bg-gray-50">
               <div class="flex items-center bg-gray-200 rounded-full px-4 py-2">
-                <i class="fas fa-check-circle text-primary-600 mr-2"></i>
-                <input type="text" placeholder="Operação otimizada!"
-                  class="bg-transparent border-none focus:outline-none w-full text-sm font-semibold text-primary-700"
-                  disabled>
+                <input 
+                  type="text" 
+                  placeholder="O assistente está operando..."
+                  class="bg-transparent border-none focus:outline-none focus:ring-0 w-full text-sm placeholder:text-gray-500 cursor-not-allowed"
+                  disabled
+                >
               </div>
             </div>
           </div>
@@ -642,7 +667,7 @@
                 <label for="email" class="block text-gray-700 font-medium mb-2">E-mail profissional</label>
                 <input type="email" id="email" name="email"
                   class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-600"
-                  placeholder="seu@escola.com" required>
+                  placeholder="seu@negocio.com" required>
                 <span id="email-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira um e-mail
                   válido.</span>
               </div>
