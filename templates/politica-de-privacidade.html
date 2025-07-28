@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - SacadaWeb</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .section-link.active {
+            color: #16a34a; /* primary-600 */
+            font-weight: 700;
+            border-left-color: #16a34a; /* primary-600 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-700">
+
+    <header class="bg-white shadow-sm sticky top-0 z-20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-slate-800">
+                Política de Privacidade
+            </h1>
+            <a href="{{ url_for('home') }}" class="text-sm font-semibold text-primary-600 hover:text-primary-800 transition-colors">
+                &larr; Voltar ao site principal
+            </a>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-12 md:py-16">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+
+            <aside class="w-full lg:w-1/4 lg:sticky lg:top-28 self-start">
+                <nav>
+                    <h3 class="font-bold text-slate-800 mb-4">Navegue pelas seções</h3>
+                    <ul id="toc" class="space-y-2">
+                        <li><a href="#introducao" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">1. Introdução</a></li>
+                        <li><a href="#papeis" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">2. Nosso Papel</a></li>
+                        <li><a href="#dados-coletados" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">3. Dados Coletados</a></li>
+                        <li><a href="#finalidade" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">4. Finalidades</a></li>
+                        <li><a href="#compartilhamento" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">5. Compartilhamento</a></li>
+                        <li><a href="#seguranca" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">6. Segurança e Prazo</a></li>
+                        <li><a href="#seus-direitos" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">7. Seus Direitos</a></li>
+                        <li><a href="#contato" class="section-link block text-slate-600 hover:text-primary-600 transition-colors border-l-2 border-transparent pl-4 py-1">8. Contato</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="w-full lg:w-3/4 space-y-10 prose prose-slate max-w-none">
+                <section id="introducao">
+                    <p class="text-sm text-slate-500">Última atualização: 28 de julho de 2025</p>
+                    <h2 class="text-3xl font-bold text-slate-900">1. Introdução</h2>
+                    <p>A privacidade e a segurança dos dados de nossos clientes e visitantes são prioridade para a <strong>SacadaWeb</strong>. Esta Política de Privacidade detalha como coletamos, usamos e protegemos as informações pessoais fornecidas através de nosso site, em total conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).</p>
+                </section>
+
+                <section id="papeis">
+                    <h2 class="text-3xl font-bold text-slate-900">2. Nosso Papel no Tratamento de Dados</h2>
+                    <p>A <strong>SacadaWeb</strong> atua como <strong>Controladora</strong> dos dados pessoais coletados diretamente em nosso site (nome, e-mail, telefone, empresa), utilizados para fins de contato comercial e marketing, conforme descrito nesta política.</p>
+                    <p>Quando nossas soluções de IA e automação são implementadas em um cliente, a <strong>SacadaWeb</strong> atua como <strong>Operadora</strong> de dados. Neste caso, nosso cliente é o Controlador, e nós tratamos os dados sob suas instruções e em conformidade com o contrato de prestação de serviços, garantindo a confidencialidade e segurança das informações.</p>
+                </section>
+
+                <section id="dados-coletados">
+                    <h2 class="text-3xl font-bold text-slate-900">3. Quais Dados Coletamos?</h2>
+                    <p>Coletamos apenas os dados essenciais para estabelecer uma relação comercial com sua empresa:</p>
+                    <ul>
+                        <li><strong>Dados Fornecidos por Você:</strong> Nome do contato, nome da empresa, e-mail profissional e telefone/WhatsApp, fornecidos voluntariamente em nossos formulários.</li>
+                        <li><strong>Dados de Navegação (Cookies):</strong> Informações anônimas como endereço IP, navegador e páginas visitadas para análise e melhoria do nosso site.</li>
+                    </ul>
+                </section>
+
+                <section id="finalidade">
+                    <h2 class="text-3xl font-bold text-slate-900">4. Para Qual Finalidade Utilizamos Seus Dados?</h2>
+                    <p>Os dados coletados são utilizados exclusivamente para:</p>
+                    <ul>
+                        <li>Entrar em contato para entender suas necessidades e apresentar nossas soluções.</li>
+                        <li>Enviar propostas comerciais e informações sobre nossos serviços.</li>
+                        <li>Otimizar nosso site e estratégias de marketing.</li>
+                    </ul>
+                    <p>Utilizamos como base legal o seu <strong>consentimento</strong>, fornecido ao preencher o formulário, e o nosso <strong>legítimo interesse</strong> em desenvolver nossa atividade comercial.</p>
+                </section>
+
+                <section id="compartilhamento">
+                    <h2 class="text-3xl font-bold text-slate-900">5. Com Quem Compartilhamos Seus Dados?</h2>
+                    <p>A SacadaWeb não vende ou aluga seus dados. O compartilhamento ocorre apenas com plataformas de parceiros que nos auxiliam na operação, como ferramentas de CRM, automação de marketing e serviços de hospedagem, todos submetidos a rigorosos contratos de confidencialidade e proteção de dados.</p>
+                </section>
+
+                <section id="seguranca">
+                    <h2 class="text-3xl font-bold text-slate-900">6. Segurança e Prazo de Armazenamento</h2>
+                    <p>Adotamos medidas de segurança para proteger seus dados. As informações de contato comercial (leads) são mantidas em nossa base pelo tempo necessário para a negociação ou por um período de inatividade definido em nossas políticas internas, sempre respeitando seu direito de solicitar a eliminação a qualquer momento.</p>
+                </section>
+                
+                <section id="seus-direitos">
+                    <h2 class="text-3xl font-bold text-slate-900">7. Seus Direitos como Titular dos Dados</h2>
+                    <p>A LGPD garante a você plenos direitos sobre seus dados, incluindo acesso, correção, eliminação e revogação do consentimento. Você pode exercer esses direitos a qualquer momento.</p>
+                </section>
+                
+                <section id="contato">
+                    <h2 class="text-3xl font-bold text-slate-900">8. Contato e Identificação do Controlador</h2>
+                    <p>Para exercer seus direitos ou para qualquer dúvida, entre em contato com nosso Encarregado pela Proteção de Dados (DPO) através do e-mail:</p>
+                    <p class="text-center font-semibold text-lg bg-slate-100 p-4 rounded-lg">
+                        <a href="mailto:privacidade@sacadaweb.com.br" class="text-primary-600 hover:underline">privacidade@sacadaweb.com.br</a>
+                    </p>
+                    <div class="mt-8 p-4 bg-slate-100 border rounded-lg text-slate-800">
+                        <p><strong>Nome Fantasia:</strong> SacadaWeb</p>
+                        <p><strong>CNPJ:</strong> 61.855.033/0001-08</p>
+                    </div>
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-800 text-white p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-300">
+                <i class="fas fa-cookie-bite mr-2"></i>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com a nossa <a href="{{ url_for('privacy_policy') }}" target="_blank" class="font-semibold text-white underline hover:text-primary-300">Política de Privacidade</a>.
+            </p>
+            <button id="accept-consent" class="flex-shrink-0 bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all">
+                Entendi e aceito
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const consentBanner = document.getElementById('consent-banner');
+            const acceptButton = document.getElementById('accept-consent');
+            if (consentBanner && acceptButton) {
+                if (localStorage.getItem('privacyConsentSacadaWeb') !== 'true') {
+                    setTimeout(() => { consentBanner.classList.remove('translate-y-full'); }, 500);
+                }
+                acceptButton.addEventListener('click', () => {
+                    localStorage.setItem('privacyConsentSacadaWeb', 'true');
+                    consentBanner.classList.add('translate-y-full');
+                });
+            }
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('#toc a');
+            const makeActive = (link) => {
+                navLinks.forEach(item => item.classList.remove('active'));
+                const activeLink = document.querySelector(`#toc a[href="#${link}"]`);
+                if (activeLink) activeLink.classList.add('active');
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) makeActive(entry.target.id);
+                });
+            }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>

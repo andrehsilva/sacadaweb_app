@@ -93,6 +93,15 @@ def view_leads():
     except Exception as e:
         print(f"Erro ao buscar leads: {e}")
         return "<h1>Erro ao carregar os leads.</h1>"
+    
+
+@app.route('/politica-de-privacidade')
+def privacy_policy():
+    """Renderiza a página de Política de Privacidade."""
+    return render_template('politica-de-privacidade.html')
+
+
+# ================================================================
 
 # 5. Ponto de Entrada
 if __name__ == '__main__':
