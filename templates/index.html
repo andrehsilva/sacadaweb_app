@@ -470,6 +470,7 @@
             </div>
         </div>
     </section>
+    
 
     <section id="contato" class="py-20 md:py-28 px-6 bg-white">
         <div class="container mx-auto">
@@ -527,6 +528,42 @@
                 </div>
         </div>
     </section>
+
+    <section id="demonstracao" class="bg-slate-150 py-20 px-6">
+  <div class="container mx-auto">
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      
+      <div class="flex-grow text-center md:text-left">
+        <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
+          <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-comments text-2xl text-secondary-600"></i>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">
+            Veja nossa IA em Ação
+          </h2>
+        </div>
+        
+        <p class="text-gray-600 max-w-3xl mb-6">
+          Interaja com a "Assistente da Vovó", um chatbot que criamos para uma rotisseria fictícia. Veja como a IA pode apresentar os produtos, receber pedidos, responder dúvidas e muito mais, tudo com uma personalidade única.</p>
+
+        <div class="flex justify-center md:justify-start items-center gap-5 text-gray-400">
+          <span class="text-sm font-medium">Disponível em:</span>
+          <i class="fab fa-whatsapp text-2xl" title="WhatsApp"></i>
+          <i class="fab fa-instagram text-2xl" title="Instagram"></i>
+          <i class="fab fa-facebook-messenger text-2xl" title="Messenger"></i>
+          <i class="fas fa-globe text-2xl" title="Site"></i>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 mt-8 md:mt-0">
+        <a href="{{ url_for('chat_demo') }}" target="_blank" class="inline-block bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all transform hover:scale-105 text-lg">
+          Testar Demonstração
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
   </main>
 
   <footer class="bg-gray-700 text-gray-400 py-12">

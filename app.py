@@ -100,7 +100,10 @@ def privacy_policy():
     """Renderiza a página de Política de Privacidade."""
     return render_template('politica-de-privacidade.html')
 
-
+@app.route('/chat')
+def chat_demo():
+    """Renderiza a página de demonstração do chat."""
+    return render_template('chat.html')
 # ================================================================
 
 # 5. Ponto de Entrada
