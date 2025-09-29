@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{% block title %}SacadaWeb{% endblock %}</title>
+
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/rocket.svg') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+                        secondary: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
+                    },
+                    fontFamily: { sans: ['DM Sans', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .swiper-pagination-bullet-active { background-color: #2563eb; opacity: 1; }
+        #fullscreen-menu.is-open { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
+                <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-gray-800">Sacada<span class="text-primary-600">Web</span></span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="{{ url_for('home') }}#solucao-chefe" class="text-gray-700 font-medium hover:text-primary-600 transition">Consultoria estratégica</a>
+                <a href="{{ url_for('home') }}#como-funciona" class="text-gray-700 font-medium hover:text-primary-600 transition">Nosso processo</a>
+                <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105">
+                    Falar com especialista
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+        </div>
+    </header>
+
+    <div id="fullscreen-menu" class="fixed inset-0 bg-white z-50 flex flex-col transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
+                <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm"><i class="fas fa-rocket text-xl"></i></div>
+                <span class="text-2xl font-bold text-gray-800">Sacada<span class="text-primary-600">Web</span></span>
+            </a>
+            <button id="close-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none"><i class="fas fa-times text-3xl"></i></button>
+        </div>
+        <nav class="flex-grow flex flex-col items-center justify-center space-y-8 px-6">
+            <a href="{{ url_for('home') }}#solucao-chefe" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Consultoria estratégica</a>
+            <a href="{{ url_for('home') }}#como-funciona" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Nosso processo</a>
+            <!-- <a href="{{ url_for('educacao') }}" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Setor Educacional</a>
+            <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl">Falar com especialista</a> -->
+        </nav>
+    </div>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm"><i class="fas fa-rocket text-xl"></i></div>
+                        <span class="text-2xl font-bold text-white">Sacada<span class="text-primary-500">Web</span></span>
+                    </div>
+                    <p class="max-w-md">Automação e Inteligência Artificial para acelerar negócios. Transformamos seus processos manuais em sistemas eficientes que trabalham por você 24/7.</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Links Úteis</h3>
+                    <ul class="space-y-3">
+                        <li><a href="{{ url_for('educacao') }}" class="hover:text-white transition-colors">Solução para Educação</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Materiais Gratuitos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:contato@sacadaweb.com.br" class="hover:text-white transition-colors">contato@sacadaweb.com.br</a></li>
+                        <li><span>Ribeirão Preto - SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-12 pt-8 text-sm text-center">
+                <p class="mb-2">&copy; 2025 SacadaWeb. Todos os direitos reservados.</p>
+                <a href="{{ url_for('privacy_policy') }}" class="text-slate-400 hover:text-white transition-colors">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-sm w-full mx-4 p-8 text-center shadow-2xl">
+            <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-6">
+                <svg class="h-12 w-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-3">Obrigado!</h2>
+            <p class="text-gray-600 mb-8">Seus dados foram recebidos. Entraremos em contato em breve!</p>
+            <button id="closeModalBtn" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg w-full transition-all">Fechar</button>
+        </div>
+    </div>
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-300"><i class="fas fa-cookie-bite mr-2"></i>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com a nossa <a href="{{ url_for('privacy_policy') }}" target="_blank" class="font-semibold text-white underline hover:text-primary-300">Política de Privacidade</a>.</p>
+            <button id="accept-consent" class="flex-shrink-0 bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all">Entendi e aceito</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const consentBanner = document.getElementById('consent-banner');
+        const acceptButton = document.getElementById('accept-consent');
+        if (consentBanner && acceptButton) {
+            if (localStorage.getItem('privacyConsentSacadaWeb') !== 'true') {
+                setTimeout(() => { consentBanner.classList.remove('translate-y-full'); }, 500);
+            }
+            acceptButton.addEventListener('click', () => {
+                localStorage.setItem('privacyConsentSacadaWeb', 'true');
+                consentBanner.classList.add('translate-y-full');
+            });
+        }
+
+        const consentCheckbox = document.getElementById('privacy-consent-checkbox');
+        const submitButton = document.getElementById('submit-button');
+        if (consentCheckbox && submitButton) {
+            consentCheckbox.addEventListener('change', () => {
+                submitButton.disabled = !consentCheckbox.checked;
+            });
+        }
+  
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const fullscreenMenu = document.getElementById('fullscreen-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const openMenu = () => fullscreenMenu.classList.add('is-open');
+        const closeMenu = () => fullscreenMenu.classList.remove('is-open');
+        if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMenu);
+        if (closeMenuButton) closeMenuButton.addEventListener('click', closeMenu);
+        if (fullscreenMenu) {
+            fullscreenMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        }
+      
+        // INICIALIZAÇÃO DO SWIPER (O PONTO DA CORREÇÃO)
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: { delay: 8000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+        });
+  
+        const faqContainer = document.getElementById('faq-container');
+        if(faqContainer) {
+            const faqData = [
+                { q: 'Preciso contratar servidores ou ter uma infraestrutura de TI?', a: 'Não. Nosso modelo de manutenção mensal cobre todos os custos de servidores e licenças. Nós cuidamos de toda a infraestrutura para você.' },
+                { q: 'A IA vai substituir minha equipe?', a: 'Absolutamente não. A IA potencializa sua equipe, assumindo tarefas repetitivas e permitindo que seu time se concentre no que é estratégico.' },
+                { q: 'Em quanto tempo vejo os resultados?', a: 'A implementação inicial leva cerca de 2 semanas. Após esse período, você já começa a ver o impacto no atendimento e na captura de leads.' }
+            ];
+            faqData.forEach(item => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'border border-gray-200 bg-white rounded-xl overflow-hidden';
+                faqItem.innerHTML = `<button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold hover:bg-slate-50"><span>${item.q}</span><i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i></button><div class="faq-content hidden px-5 pb-5 pt-0 text-gray-600">${item.a}</div>`;
+                faqContainer.appendChild(faqItem);
+            });
+            faqContainer.addEventListener('click', (e) => {
+                const toggleButton = e.target.closest('.faq-toggle');
+                if (toggleButton) {
+                    const content = toggleButton.nextElementSibling;
+                    const icon = toggleButton.querySelector('i');
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                }
+            });
+        }
+  
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                else { document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+  
+        const successModal = document.getElementById('successModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const contactForm = document.getElementById('contact-form');
+        if (successModal && closeModalBtn && contactForm) {
+            const openModal = () => successModal.classList.remove('hidden');
+            const closeModal = () => successModal.classList.add('hidden');
+            closeModalBtn.addEventListener('click', closeModal);
+            successModal.addEventListener('click', (e) => (e.target === successModal) && closeModal());
+            
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                fetch("{{ url_for('submit_lead') }}", { method: 'POST', body: formData })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            contactForm.reset();
+                            if(submitButton) submitButton.disabled = true;
+                            if(consentCheckbox) consentCheckbox.checked = false;
+                            openModal();
+                        } else { alert(data.message || 'Ocorreu um erro. Tente novamente.'); }
+                    })
+                    .catch(error => { console.error('Error:', error); alert('Erro de conexão. Tente novamente.'); });
+            });
+        }
+  
+        const whatsappInput = document.getElementById('whatsapp');
+        if (whatsappInput) {
+            whatsappInput.addEventListener('input', (e) => {
+                let v = e.target.value.replace(/\D/g, '').substring(0, 11);
+                v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+                v = v.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = v;
+            });
+        }
+  
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (fullscreenMenu && fullscreenMenu.classList.contains('is-open')) { closeMenu(); }
+                if (successModal && !successModal.classList.contains('hidden')) { closeModal(); }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

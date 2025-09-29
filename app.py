@@ -50,6 +50,18 @@ def home():
     """Renderiza a página principal."""
     return render_template('index.html')
 
+@app.route('/educacao')
+def educacao():
+    """Renderiza a página dedicada ao setor educacional."""
+    return render_template('educacao.html')
+
+
+@app.route('/solucao')
+def solucao():
+    """Renderiza a página dedicada a soluções."""
+    return render_template('solucao.html')
+# ============================================
+
 @app.route('/submit', methods=['POST'])
 def submit_lead():
     """Recebe, valida e salva os dados do formulário."""

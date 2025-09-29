@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}
+SacadaGear | Plataforma de Gestão para Empresas de Serviço
+{% endblock %}
+
+{% block content %}
+
+    <section class="relative bg-gradient-to-br from-primary-700 to-primary-900 text-white overflow-hidden">
+      <div class="container mx-auto px-6 py-24 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Menos planilhas, <span class="gradient-text font-extrabold">mais crescimento.</span></h1>
+        <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">SacadaGear, a plataforma definitiva para organizar e impulsionar seu negócio. Centralize clientes, equipes, estoque, finanças e gerencie suas manutenções em um só lugar.</p>
+        
+      </div>
+    </section>
+
+    <section id="features" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Uma plataforma, controle absoluto.</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Tudo que sua equipe precisa para ser mais produtiva, do escritório ao campo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition hover:-translate-y-2">
+                    <img src="{{ url_for('static', filename='images/icons/icon-manutencao.svg') }}" alt="Ícone de Controle de Manutenções" class="h-12 w-12">
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Controle de Manutenções</h3>
+                    <p class="mt-2 text-gray-600">Dashboard visual que mostra o que está vencido, em dia ou próximo do vencimento. Nunca mais perca um prazo.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition hover:-translate-y-2">
+                    <img src="{{ url_for('static', filename='images/icons/icon-estoque.svg') }}" alt="Ícone de Controle de Estoque" class="h-12 w-12">
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Controle de Estoque Inteligente</h3>
+                    <p class="mt-2 text-gray-600">Dê baixa automática em peças vinculadas a manutenções e gerencie itens de consumo com facilidade.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition hover:-translate-y-2">
+                    <img src="{{ url_for('static', filename='images/icons/icon-clientes.svg') }}" alt="Ícone de Gestão de Clientes" class="h-12 w-12">
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Gestão de Clientes e Equipamentos</h3>
+                    <p class="mt-2 text-gray-600">Centralize todos os dados dos seus clientes e seus respectivos equipamentos, com histórico completo e fácil acesso.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition hover:-translate-y-2">
+                    <img src="{{ url_for('static', filename='images/icons/icon-whatsapp.svg') }}" alt="Ícone de Lembretes por WhatsApp" class="h-12 w-12">
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Lembretes por WhatsApp</h3>
+                    <p class="mt-2 text-gray-600">Painel que prepara lembretes de manutenção para enviar com um clique. Proatividade que encanta e fideliza o cliente.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition hover:-translate-y-2">
+                    <img src="{{ url_for('static', filename='images/icons/icon-gastos.svg') }}" alt="Ícone de Controle de Gastos" class="h-12 w-12">
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Controle de Gastos e Custos</h3>
+                    <p class="mt-2 text-gray-600">Técnicos registram despesas e o gestor acompanha tudo em relatórios, analisando custos por cliente e período.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition hover:-translate-y-2">
+                    <img src="{{ url_for('static', filename='images/icons/icon-tarefas.svg') }}" alt="Ícone de Gerenciador de Tarefas" class="h-12 w-12">
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Gerenciador de Tarefas</h3>
+                    <p class="mt-2 text-gray-600">Crie e atribua tarefas avulsas para sua equipe. O técnico atualiza o status e o gestor acompanha o progresso de todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Visão do Gestor,<br>Ferramenta do Técnico.</h2>
+                    <p class="mt-4 text-lg text-gray-600">O SacadaGear foi pensado para os dois pilares da sua empresa, com perfis e permissões que garantem que cada um foque no que realmente importa.</p>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-lg flex items-start space-x-4">
+                        <img src="{{ url_for('static', filename='images/icons/icon-gestor.svg') }}" alt="Ícone do perfil de Gestor" class="h-10 w-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Visão do Administrador</h3>
+                            <p class="text-sm text-gray-600">Controle total sobre clientes, equipamentos, finanças e equipe. Delega tarefas e acompanha o progresso com relatórios completos.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 p-6 rounded-lg flex items-start space-x-4">
+                        <img src="{{ url_for('static', filename='images/icons/icon-tecnico.svg') }}" alt="Ícone do perfil de Técnico" class="h-10 w-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Visão do Técnico</h3>
+                            <p class="text-sm text-gray-600">Interface simples e direta no celular. Acessa suas manutenções, registra serviços, bate o ponto e lança despesas com poucos cliques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-100">
+      <div class="container mx-auto px-6 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Pronto para organizar sua operação?</h2>
+        <p class="text-lg text-gray-600 mb-8">Fale com um especialista e descubra como o SacadaGear pode ser adaptado para a sua necessidade real, colocando sua empresa no caminho do crescimento.</p>
+      </div>
+    </section>
+
+{% endblock %}

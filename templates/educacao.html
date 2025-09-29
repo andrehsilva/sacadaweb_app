@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+IA, Automação e Dados para Escolas | SacadaEdu
+{% endblock %}
+
+{% block content %}
+    <section class="relative bg-gradient-to-br from-primary-700 to-primary-900 text-white overflow-hidden">
+      <div class="container mx-auto px-6 py-24 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Transforme sua escola com <span class="gradient-text font-extrabold">IA e Automação</span></h1>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">Automatize matrículas, atendimento e rotinas administrativas. Tome decisões estratégicas com dados em tempo real.</p>
+      </div>
+    </section>
+
+    <section class="bg-white text-gray-900 py-20">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Automatize tarefas <span class="text-primary-600">com eficiência</span></h2>
+          <p class="text-lg text-gray-700 mb-6">Integre sistemas internos, planilhas e comunicação em uma rotina inteligente. Reduza custos e libere tempo para focar no pedagógico.</p>
+          <ul class="space-y-3 text-base text-gray-800">
+            <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Atendimento automatizado 24/7</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Integração com drive, WhatsApp e sistemas</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Eliminação de retrabalho e falhas manuais</li>
+          </ul>
+        </div>
+        <div class="flex justify-center">
+          <img src="{{ url_for('static', filename='images/1.png') }}" alt="Automação escolar" class="rounded-2xl shadow-xl max-w-full w-[420px] floating">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-100 text-gray-900 py-20">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-last md:order-first flex justify-center">
+          <img src="{{ url_for('static', filename='images/2.png') }}" alt="Análise de dados" class="rounded-2xl shadow-xl max-w-full w-[420px] floating">
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Decisões mais assertivas com <span class="text-secondary-600">dados</span></h2>
+          <p class="text-lg text-gray-700 mb-6">Transforme informações em insights. Monitore matrículas, inadimplência, evasão e engajamento dos pais em tempo real.</p>
+          <ul class="space-y-3 text-base text-gray-800">
+            <li class="flex items-center"><i class="fas fa-check-circle text-secondary-500 mr-2"></i> Dashboards pedagógicos, financeiros e operacionais</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-secondary-500 mr-2"></i> Alertas inteligentes para ação rápida</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-secondary-500 mr-2"></i> Relatórios automáticos para reuniões</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-br from-primary-700 to-primary-900 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Resultados reais para sua escola</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
+            <div class="text-4xl font-extrabold text-secondary-300 mb-2">40%</div>
+            <p>Redução de custos operacionais</p>
+          </div>
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
+            <div class="text-4xl font-extrabold text-secondary-300 mb-2">24/7</div>
+            <p>Atendimento contínuo</p>
+          </div>
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
+            <div class="text-4xl font-extrabold text-secondary-300 mb-2">3x</div>
+            <p>Mais matrículas convertidas</p>
+          </div>
+          <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
+            <div class="text-4xl font-extrabold text-secondary-300 mb-2">+90%</div>
+            <p>Satisfação de pais e alunos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="educacao" class="py-20 bg-white">
+      <div class="container mx-auto px-6 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Solução sob medida para sua escola</h2>
+        <p class="text-lg text-gray-600 mb-8">Cada projeto é personalizado conforme sua necessidade real. Fale com um especialista e descubra como podemos transformar sua gestão escolar.</p>
+      </div>
+    </section>
+{% endblock %}

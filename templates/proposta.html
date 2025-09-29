@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>SacadaWeb - IA e Automação para Negócios</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://www.svgrepo.com/show/492712/dough.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 
+                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 
+                            300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 
+                            600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' 
+                        },
+                        secondary: { 
+                            50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 
+                            300: '#fdba74', 400: '#fb923c', 500: '#f97316', 
+                            600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' 
+                        },
+                        edu: {
+                            50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0',
+                            300: '#86efac', 400: '#4ade80', 500: '#22c55e',
+                            600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d'
+                        },
+                        gear: {
+                            50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff',
+                            300: '#d8b4fe', 400: '#c084fc', 500: '#a855f7',
+                            600: '#9333ea', 700: '#7c3aed', 800: '#6b21a8', 900: '#581c87'
+                        }
+                    },
+                    fontFamily: { sans: ['DM Sans', 'sans-serif'] },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .swiper-pagination-bullet-active { background-color: #2563eb; opacity: 1; }
+        #fullscreen-menu.is-open { opacity: 1; pointer-events: auto; }
+        
+        .brand-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #22c55e 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+        }
+        
+        .holding-structure {
+            position: relative;
+        }
+        
+        .holding-line {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #22c55e, #a855f7);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3">
+                <div class="bg-gradient-to-br from-primary-500 to-primary-700 text-white p-2 rounded-xl shadow-sm">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-gray-800">Sacada<span class="brand-gradient">Web</span></span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#solucoes" class="text-gray-700 font-medium hover:text-primary-600 transition">Soluções</a>
+                <a href="#divisoes" class="text-gray-700 font-medium hover:text-primary-600 transition">Divisões</a>
+                <a href="#como-funciona" class="text-gray-700 font-medium hover:text-primary-600 transition">Como Funciona</a>
+                <a href="#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105">
+                    Falar com especialista
+                </a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="fullscreen-menu" class="fixed inset-0 bg-white z-50 flex flex-col transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3">
+                <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-gray-800">Sacada<span class="text-primary-600">Web</span></span>
+            </a>
+            <button id="close-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+        </div>
+        <nav class="flex-grow flex flex-col items-center justify-center space-y-8 px-6">
+            <a href="#solucoes" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Soluções</a>
+            <a href="#divisoes" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Divisões</a>
+            <a href="#como-funciona" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Como Funciona</a>
+            <a href="#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl">Falar com especialista</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-slate-50 to-primary-50 overflow-hidden">
+        <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]"></div>
+        <div class="container mx-auto px-6 py-20 md:py-32 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <span class="inline-block px-4 py-1 bg-white/80 text-primary-700 rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
+                        INOVAÇÃO E EFICIÊNCIA EM TODOS OS SETORES
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                        <span class="text-gray-900">A evolução da</span>
+                        <span class="brand-gradient"> automação inteligente</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl">
+                        A SacadaWeb é a holding que reúne divisões especializadas em IA, automação e tecnologia, oferecendo soluções completas para transformar negócios em diversos setores.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 inline-block text-center">
+                            Quero transformar meu negócio
+                        </a>
+                        <a href="#divisoes" class="border border-primary-600 text-primary-600 hover:bg-primary-50 font-bold py-4 px-8 rounded-lg transition-all duration-300 inline-block text-center">
+                            Conhecer nossas divisões
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center relative">
+                    <div class="relative w-full max-w-lg">
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse-slow"></div>
+                        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-edu-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse-slow animation-delay-2000"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gear-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse-slow animation-delay-4000"></div>
+                        
+                        <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 overflow-hidden floating">
+                            <div class="bg-gradient-to-r from-primary-600 to-primary-800 p-4 text-white">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="https://ui-avatars.com/api/?name=SW&background=ffffff&color=3b82f6&size=40" alt="Avatar SacadaWeb" class="rounded-full w-10 h-10 border-2 border-white/30">
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-semibold">Assistente SacadaWeb</p>
+                                        <p class="text-xs opacity-80">Nave-mãe das soluções inteligentes</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-4 h-64 overflow-y-auto">
+                                <div class="bg-gray-100 rounded-lg p-3 text-sm text-gray-800 max-w-[85%]">
+                                    <p>Olá! Sou o assistente da SacadaWeb, sua nave-mãe em soluções de IA e automação. Como posso ajudar sua empresa hoje?</p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%]">
+                                        <p>Gostaria de saber mais sobre automação para minha escola.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-3 text-sm text-gray-800 max-w-[85%]">
+                                    <p>Perfeito! Nossa divisão <strong>SacadaEdu</strong> tem soluções específicas para instituições de ensino. Posso conectar você com um especialista!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisões da Empresa -->
+    <section id="divisoes" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                    NOSSAS DIVISÕES ESPECIALIZADAS
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Especialização que impulsiona resultados</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A SacadaWeb atua como holding, reunindo divisões especializadas que oferecem soluções específicas para diferentes setores e necessidades.
+                </p>
+            </div>
+            
+            <!-- Estrutura de Holding -->
+            <div class="holding-structure mb-16">
+                <div class="holding-line h-full top-0 bottom-0 hidden md:block"></div>
+                
+                <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                    <!-- SacadaWeb (Holding) -->
+                    <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl shadow-xl border-2 border-primary-200 overflow-hidden card-hover transform md:scale-110 z-20">
+                        <div class="h-2 bg-gradient-to-r from-primary-500 to-primary-700"></div>
+                        <div class="p-8 text-center">
+                            <div class="w-20 h-20 rounded-full bg-primary-100 flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                <i class="fas fa-satellite-dish text-3xl text-primary-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">SacadaWeb</h3>
+                            <p class="text-primary-700 font-semibold mb-4">Nave-Mãe / Holding</p>
+                            <p class="text-gray-600 mb-6">
+                                Coordenação estratégica, inovação tecnológica e soluções corporativas de IA e automação.
+                            </p>
+                            <div class="flex justify-center space-x-2 mb-6">
+                                <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2.5 py-0.5 rounded">Gestão</span>
+                                <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2.5 py-0.5 rounded">Estratégia</span>
+                                <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2.5 py-0.5 rounded">Inovação</span>
+                            </div>
+                            <a href="#contato" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                                Falar com a holding
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Divisões Especializadas -->
+                <div class="grid md:grid-cols-2 gap-8 mt-16 md:mt-32">
+                    <!-- SacadaEdu -->
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-lg border border-slate-100 overflow-hidden card-hover">
+                        <div class="h-2 bg-gradient-to-r from-edu-500 to-edu-700"></div>
+                        <div class="p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-14 h-14 rounded-xl bg-edu-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-2xl text-edu-600"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">SacadaEdu</h3>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                Tecnologia educacional para otimizar gestão escolar e melhorar a experiência de aprendizagem.
+                            </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-edu-500 mr-3 mt-1"></i>
+                                    <span>Automação de matrículas e processos acadêmicos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-edu-500 mr-3 mt-1"></i>
+                                    <span>Plataforma de comunicação escola-família</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-edu-500 mr-3 mt-1"></i>
+                                    <span>Analytics educacional para tomada de decisão</span>
+                                </li>
+                            </ul>
+                            <a href="#contato" class="block w-full bg-edu-600 hover:bg-edu-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-colors">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- SacadaGear -->
+                    <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-lg border border-slate-100 overflow-hidden card-hover">
+                        <div class="h-2 bg-gradient-to-r from-gear-500 to-gear-700"></div>
+                        <div class="p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-14 h-14 rounded-xl bg-gear-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-cube text-2xl text-gear-600"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">SacadaGear</h3>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                Produtos e soluções prontas para implementação rápida em diferentes segmentos.
+                            </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-gear-500 mr-3 mt-1"></i>
+                                    <span>Kits de automação para setores específicos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-gear-500 mr-3 mt-1"></i>
+                                    <span>Modelos de chatbots pré-configurados</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-gear-500 mr-3 mt-1"></i>
+                                    <span>Integrações plug-and-play com sistemas populares</span>
+                                </li>
+                            </ul>
+                            <a href="#contato" class="block w-full bg-gear-600 hover:bg-gear-700 text-white font-bold py-3 px-6 rounded-lg text-center transition-colors">
+                                Saber mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisor Visual -->
+    <div class="section-divider my-16"></div>
+
+    <!-- Vantagens da Estrutura -->
+    <section class="py-20 bg-gradient-to-br from-slate-50 to-primary-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1 bg-white/80 text-primary-700 rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
+                    VANTAGENS DA ESTRUTURA DE HOLDING
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">O poder da especialização integrada</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Como holding, a SacadaWeb coordena divisões especializadas que trabalham de forma integrada para oferecer o melhor de cada expertise.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg border border-white/20">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chess-queen text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Governança Centralizada</h3>
+                    <p class="text-gray-600">Estratégia unificada com execução especializada em cada divisão.</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg border border-white/20">
+                    <div class="w-16 h-16 rounded-full bg-edu-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bullseye text-2xl text-edu-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Foco Especializado</h3>
+                    <p class="text-gray-600">Cada divisão domina seu segmento com profundidade técnica.</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg border border-white/20">
+                    <div class="w-16 h-16 rounded-full bg-gear-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-puzzle-piece text-2xl text-gear-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Integração Perfeita</h3>
+                    <p class="text-gray-600">Soluções que se complementam para casos mais complexos.</p>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 text-center shadow-lg border border-white/20">
+                    <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Escalabilidade</h3>
+                    <p class="text-gray-600">Estrutura preparada para crescimento e novas divisões.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 md:py-28 bg-gradient-to-br from-primary-800 to-primary-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden md:flex border border-white/20">
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                    <h2 class="text-3xl font-bold mb-4">Pronto para a próxima sacada do seu negócio?</h2>
+                    <p class="mb-8 text-primary-100">
+                        Converse com nossos especialistas e descubra como a SacadaWeb e suas divisões podem transformar sua operação.
+                    </p>
+                    <ul class="space-y-4 text-primary-100">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-300 mr-3"></i>
+                            Diagnóstico gratuito do seu negócio
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-300 mr-3"></i>
+                            Encaminhamento para a divisão especializada
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-primary-300 mr-3"></i>
+                            Implementação com suporte contínuo
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 p-8 md:p-12 bg-white/5">
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <label for="nome" class="block text-white font-medium mb-1 text-sm">Seu nome</label>
+                            <input type="text" id="nome" name="nome" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-300 text-white placeholder-white/60" required>
+                        </div>
+                        <div>
+                            <label for="empresa" class="block text-white font-medium mb-1 text-sm">Nome da empresa</label>
+                            <input type="text" id="empresa" name="empresa" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-300 text-white placeholder-white/60" required>
+                        </div>
+                        <div>
+                            <label for="whatsapp" class="block text-white font-medium mb-1 text-sm">WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-300 text-white placeholder-white/60" required>
+                        </div>
+                        <div>
+                            <label for="interesse" class="block text-white font-medium mb-1 text-sm">Interesse principal</label>
+                            <select id="interesse" name="interesse" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-300 text-white">
+                                <option value="" class="text-gray-800">Selecione uma opção</option>
+                                <option value="holding" class="text-gray-800">SacadaWeb (Holding/Estratégia)</option>
+                                <option value="sacadaedu" class="text-gray-800">SacadaEdu (Soluções Educacionais)</option>
+                                <option value="sacadagear" class="text-gray-800">SacadaGear (Produtos Prontos)</option>
+                                <option value="outro" class="text-gray-800">Não tenho certeza</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all transform hover:scale-105">
+                                Agendar análise gratuita
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-gradient-to-br from-primary-500 to-primary-700 text-white p-2 rounded-xl shadow-sm">
+                            <i class="fas fa-rocket text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Sacada<span class="brand-gradient">Web</span></span>
+                    </div>
+                    <p class="max-w-md">
+                        Holding especializada em IA e automação, reunindo divisões que oferecem soluções completas para negócios, educação e diversos setores.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Nossas Divisões</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition-colors">SacadaWeb (Holding)</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SacadaEdu (Educação)</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SacadaGear (Produtos)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-3">
+                        <li><a href="mailto:contato@sacadaweb.com.br" class="hover:text-white transition-colors">contato@sacadaweb.com.br</a></li>
+                        <li><span>Ribeirão Preto - SP</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-12 pt-8 text-sm text-center">
+                <p class="mb-2">&copy; 2025 SacadaWeb. Todos os direitos reservados.</p>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const fullscreenMenu = document.getElementById('fullscreen-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        
+        const openMenu = () => {
+            fullscreenMenu.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        };
+        
+        const closeMenu = () => {
+            fullscreenMenu.classList.remove('is-open');
+            document.body.style.overflow = 'auto';
+        };
+        
+        if (mobileMenuButton) mobileMenuButton.addEventListener('click', openMenu);
+        if (closeMenuButton) closeMenuButton.addEventListener('click', closeMenu);
+        
+        if (fullscreenMenu) {
+            fullscreenMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') { 
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                } else { 
+                    document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' }); 
+                }
+            });
+        });
+        
+        // Formatação do WhatsApp
+        const whatsappInput = document.getElementById('whatsapp');
+        if (whatsappInput) {
+            whatsappInput.addEventListener('input', (e) => {
+                let v = e.target.value.replace(/\D/g, '').substring(0, 11);
+                v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+                v = v.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = v;
+            });
+        }
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                // Simulação de envio
+                alert('Obrigado pelo seu interesse! Em breve entraremos em contato.');
+                contactForm.reset();
+            });
+        }
+        
+        // Escape key to close modals/menus
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (fullscreenMenu && fullscreenMenu.classList.contains('is-open')) { 
+                    closeMenu(); 
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>
