@@ -71,30 +71,32 @@ def submit_lead():
     whatsapp_raw = form_data.get('whatsapp', '')
     email = form_data.get('email')
 
-    if not all([nome, empresa, whatsapp_raw]):
-        return jsonify({'status': 'error', 'message': 'Todos os campos são obrigatórios.'}), 400
+    if not all([nome, empresa, whatsapp_raw, email]): # Adicionado 'email' aqui também como obrigatório se for o caso
+        return jsonify({'status': 'error', 'message': 'Por favor, preencha todos os campos.'}), 400
 
     whatsapp_clean = re.sub(r'[\(\)\s-]', '', whatsapp_raw)
     if not re.match(PHONE_REGEX, whatsapp_clean):
-        return jsonify({'status': 'error', 'message': 'Formato de telefone inválido.'}), 400
+        return jsonify({'status': 'error', 'message': 'O formato do WhatsApp é inválido. Use apenas números (ex: 5511987654321).'}), 400 # Mensagem mais descritiva
         
     if Lead.query.filter_by(whatsapp=whatsapp_raw).first():
-        return jsonify({'status': 'error', 'message': 'Este número de WhatsApp já foi cadastrado.'}), 400
+        return jsonify({'status': 'error', 'message': 'Este número de WhatsApp já foi cadastrado.'}), 409 # Sugerido 409
     
     if Lead.query.filter_by(email=email).first():
-        return jsonify({'status': 'error', 'message': 'Este e-mail já foi cadastrado.'}), 400
+        return jsonify({'status': 'error', 'message': 'Este e-mail já foi cadastrado.'}), 409 # Sugerido 409
 
     try:
         new_lead = Lead(nome=nome, empresa=empresa, whatsapp=whatsapp_raw, email=email)
         db.session.add(new_lead)
         db.session.commit()
         print(f"Novo lead salvo: {nome}, Empresa: {empresa}")
-        return jsonify({'status': 'success', 'message': 'Lead salvo com sucesso!'})
+        return jsonify({'status': 'success', 'message': 'Seu contato foi enviado com sucesso! Em breve entraremos em contato.'}) # Mensagem de sucesso mais amigável
 
     except SQLAlchemyError as e:
         db.session.rollback()
         print(f"Erro de banco de dados: {e}")
-        return jsonify({'status': 'error', 'message': 'Erro ao salvar os dados no banco.'}), 500
+        # Uma mensagem genérica para o usuário é mais segura do que expor detalhes do erro
+        return jsonify({'status': 'error', 'message': 'Ocorreu um erro ao tentar salvar seu contato. Por favor, tente novamente mais tarde.'}), 500
+
 
 @app.route('/leads')
 def view_leads():
