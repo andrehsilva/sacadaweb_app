@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:André Henrique Rodrigues da Silva
+ORG:SacadaWeb
+TITLE:Fundador / Desenvolvedor Web
+TEL;TYPE=WORK,VOICE;VALUE=uri:tel:+55-16-99112-2235
+EMAIL:contato@sacadaweb.com.br
+URL:https://sacadaweb.com.br
+END:VCARD

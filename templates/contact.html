@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Henrique Rodrigues da Silva - Contato | SacadaWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #0a66c2;
+            color: white;
+            padding: 30px 20px 70px 20px;
+            position: relative;
+        }
+        
+        .header-title {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0 0 10px 0;
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        /* CSS AJUSTADO PARA FUNCIONAR COM UMA TAG <img> */
+        .header-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px; /* Controla o tamanho da imagem */
+            height: auto;
+            opacity: 0.2;
+        }
+
+        .card-body {
+            padding: 0 30px 30px 30px;
+        }
+
+        .profile-picture {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid #ffffff;
+            margin-top: -70px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .business-title {
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .links-container {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .links-container li {
+            margin-bottom: 15px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .link-button i {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        .save-contact { background-color: #343a40; }
+        .whatsapp { background-color: #25d366; }
+        .website { background-color: #0a66c2; }
+        .linkedin { background-color: #0e76a8; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="header-subtitle">IA, automação & estratégia de dados para o sucesso do seu negócio.</h2>
+        </div>
+
+        <div class="card-body">
+            <img src="{{ url_for('static', filename='images/andre.jpeg') }}" alt="Foto de André Henrique Rodrigues da Silva" class="profile-picture">
+
+            <h1>André Henrique Rodrigues da Silva</h1>
+
+            <p class="business-title">
+                Founder at SacadaWeb | AI & Automation for Business Growth
+            </p>
+
+            <ul class="links-container">
+                <li>
+                    <a href="{{ url_for('static', filename='file/contato.vcfg') }}" class="link-button save-contact" download="Andre_Rodrigues_SacadaWeb.vcf">
+                        <i class="fas fa-address-card"></i> Salvar Contato
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/5516991122235" target="_blank" class="link-button whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+                </li>
+                <li>
+                    <a href="https://sacadaweb.com.br" target="_blank" class="link-button website">
+                        <i class="fas fa-globe"></i> Site SacadaWeb
+                    </a>
+                </li>
+                 <li>
+                    <a href="https://www.linkedin.com/in/andrehrsilva/" target="_blank" class="link-button linkedin">
+                        <i class="fab fa-linkedin"></i> Conectar no LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

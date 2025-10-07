@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - André Rodrigues | SacadaWeb</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: sans-serif;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        img {
+            max-width: 80vw; /* Garante que o QR code não seja maior que a tela em celulares */
+            width: 300px; /* Tamanho padrão */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>André | SacadaWeb</h1>
+        <p>Escaneie o código para adicionar meu contato</p>
+        <img src="data:image/png;base64,{{ qr_code_data }}" alt="QR Code de Contato">
+    </div>
+</body>
+</html>

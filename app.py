@@ -1,4 +1,9 @@
 import os
+
+import io
+import base64
+from flask import Flask, render_template, url_for, send_file
+import qrcode
 import re
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -118,6 +123,40 @@ def privacy_policy():
 def chat_demo():
     """Renderiza a página de demonstração do chat."""
     return render_template('chat.html')
+
+@app.route('/contact')
+def contact():
+    """Renderiza a página de demonstração do chat."""
+    return render_template('contact.html')
+
+@app.route('/qrcode')
+def qr_code_page():
+    # Gera a URL completa para a página de contato.
+    # Usar _external=True é ESSENCIAL para que o QR Code funcione fora da sua rede local.
+    contact_url = url_for('contact', _external=True)
+
+    # Configura e gera a imagem do QR Code
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(contact_url)
+    qr.make(fit=True)
+
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    # Salva a imagem em um buffer de memória em vez de um arquivo
+    buf = io.BytesIO()
+    img.save(buf)
+    buf.seek(0)
+    
+    # Codifica a imagem em Base64 para embutir diretamente no HTML
+    img_b64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+
+    # Renderiza o template, passando os dados da imagem
+    return render_template('qrcode.html', qr_code_data=img_b64)
 # ================================================================
 
 # 5. Ponto de Entrada
