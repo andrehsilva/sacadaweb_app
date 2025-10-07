@@ -2,13 +2,13 @@ import os
 
 import io
 import base64
-from flask import Flask, render_template, url_for, send_file
+from flask import Flask, render_template, url_for, send_file, request, jsonify, make_response
 import qrcode
 import re
-from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
 from dotenv import load_dotenv
+from weasyprint import HTML
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -157,6 +157,31 @@ def qr_code_page():
 
     # Renderiza o template, passando os dados da imagem
     return render_template('qrcode.html', qr_code_data=img_b64)
+
+
+
+@app.route('/download-pdf')
+def download_pdf():
+    try:
+        # Renderiza o template HTML específico para o PDF
+        html_string = render_template('contact_pdf.html')
+
+        # Cria o PDF em memória a partir do HTML renderizado
+        # base_url é importante para o WeasyPrint encontrar arquivos estáticos como imagens
+        pdf_file = HTML(string=html_string, base_url=request.base_url).write_pdf()
+
+        # Cria a resposta para o navegador forçar o download
+        response = make_response(pdf_file)
+        response.headers['Content-Type'] = 'application/pdf'
+        response.headers['Content-Disposition'] = 'attachment; filename="contato-andre-sacadaweb.pdf"'
+
+        return response
+
+    except Exception as e:
+        print(f"Erro ao gerar PDF: {e}")
+        return "<h1>Ocorreu um erro ao gerar o PDF.</h1>", 500
+    
+
 # ================================================================
 
 # 5. Ponto de Entrada

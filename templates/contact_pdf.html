@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato - André Henrique Rodrigues da Silva</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; /* Usando a mesma fonte para consistência */
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto;
+            border: 3px solid #0a66c2;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 5px 0;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 16px;
+            font-weight: normal;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .contact-info {
+            list-style: none;
+            padding: 0;
+            border-top: 1px solid #eee;
+        }
+        .contact-info li {
+            padding: 15px 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .contact-info strong {
+            color: #0a66c2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/andre.jpeg', _external=True) }}" alt="Foto de André" class="profile-picture">
+
+        <h1>André Henrique Rodrigues da Silva</h1>
+        <h2>Founder at SacadaWeb | AI & Automation for Business Growth</h2>
+
+        <ul class="contact-info">
+            <li><strong>WhatsApp:</strong> +55 16 99112-2235</li>
+            <li><strong>Site:</strong> https://sacadaweb.com.br</li>
+            <li><strong>LinkedIn:</strong> https://www.linkedin.com/in/andrehrsilva/</li>
+            </ul>
+    </div>
+</body>
+</html>

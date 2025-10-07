@@ -48,6 +48,7 @@
             font-weight: 600;
             margin: 0;
         }
+        .pdf-download { background-color: #d93025; } /* Cor vermelha para PDF */
         
         /* CSS AJUSTADO PARA FUNCIONAR COM UMA TAG <img> */
         .header-icon {
@@ -162,6 +163,11 @@
                  <li>
                     <a href="https://www.linkedin.com/in/andrehrsilva/" target="_blank" class="link-button linkedin">
                         <i class="fab fa-linkedin"></i> Conectar no LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('download_pdf') }}" class="link-button pdf-download">
+                        <i class="fas fa-file-pdf"></i> Baixar em PDF
                     </a>
                 </li>
             </ul>
