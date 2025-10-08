@@ -8,7 +8,7 @@ import re
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
 from dotenv import load_dotenv
-from weasyprint import HTML
+
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
