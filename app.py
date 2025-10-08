@@ -160,26 +160,7 @@ def qr_code_page():
 
 
 
-@app.route('/download-pdf')
-def download_pdf():
-    try:
-        # Renderiza o template HTML específico para o PDF
-        html_string = render_template('contact_pdf.html')
 
-        # Cria o PDF em memória a partir do HTML renderizado
-        # base_url é importante para o WeasyPrint encontrar arquivos estáticos como imagens
-        pdf_file = HTML(string=html_string, base_url=request.base_url).write_pdf()
-
-        # Cria a resposta para o navegador forçar o download
-        response = make_response(pdf_file)
-        response.headers['Content-Type'] = 'application/pdf'
-        response.headers['Content-Disposition'] = 'attachment; filename="contato-andre-sacadaweb.pdf"'
-
-        return response
-
-    except Exception as e:
-        print(f"Erro ao gerar PDF: {e}")
-        return "<h1>Ocorreu um erro ao gerar o PDF.</h1>", 500
     
 
 # ================================================================
