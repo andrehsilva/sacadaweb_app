@@ -45,9 +45,17 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="{{ url_for('home') }}#solucao-chefe" class="text-gray-700 font-medium hover:text-primary-600 transition">Consultoria estratégica</a>
                 <a href="{{ url_for('home') }}#processo" class="text-gray-700 font-medium hover:text-primary-600 transition">Nosso processo</a>
-                <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105">
-                    Falar com especialista
-                </a>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105" title="Fale conosco pelo WhatsApp">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    
+                    <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105">
+                        Falar com especialista
+                    </a>
+                </div>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
         </div>
@@ -64,8 +72,16 @@
         <nav class="flex-grow flex flex-col items-center justify-center space-y-8 px-6">
             <a href="{{ url_for('home') }}#solucao-chefe" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Consultoria estratégica</a>
             <a href="{{ url_for('home') }}#processo" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Nosso processo</a>
-            <!-- <a href="{{ url_for('educacao') }}" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Setor Educacional</a>
-            <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl">Falar com especialista</a> -->
+            <div class="flex flex-col items-center space-y-6 pt-4">
+                <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-3 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl transition-transform transform hover:scale-105">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>WhatsApp</span>
+                </a>
+                
+                <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl transition-transform transform hover:scale-105">
+                    Falar com especialista
+                </a>
+            </div>
         </nav>
     </div>
 
