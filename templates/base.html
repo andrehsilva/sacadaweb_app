@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -30,6 +33,43 @@
         @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
         .swiper-pagination-bullet-active { background-color: #2563eb; opacity: 1; }
         #fullscreen-menu.is-open { opacity: 1; pointer-events: auto; }
+
+        /* ================================================================ */
+        /* REGRAS DE CSS ATUALIZADAS PARA O TEMA DA ROTISSERIA (CHATBOT) */
+        /* ================================================================ */
+        :root {
+            /* Cores Globais e do Header */
+            --chat--header--background: #3908e9; /* Topo âmbar escuro (cor de molho) */
+            --chat--header--color: #ebebf0;      
+            --chat--header--border-bottom: none; 
+            --chat--body--background: #FFFFFF;
+            --chat--footer--background: #f8fafc; /* Fundo levemente acinzentado */
+
+            /* Janela e Bordas */
+            --chat--border-radius: 1.0rem;
+            --chat--window--width: 400px;
+            --chat--window--height: 600px;
+
+            /* Campo de Digitação (Textarea) */
+            --chat--input--border-radius: 0.75rem;
+            --chat--input--border: 1px solid #d1d5db; 
+            --chat--textarea--height: 50px;
+            --chat--input--send--button--background: transparent;
+
+            /* Balões de Mensagem */
+            --chat--message--bot--background: #f1f5f9;    /* Cinza claro para a vovó */
+            --chat--message--bot--color: #1f2937;         
+            --chat--message--bot--border: 1px solid #e5e7eb;
+            --chat--message--user--background: #fef3c7;   /* Amarelo claro para o usuário */
+            --chat--message--user--color: #92400e;        /* Marrom escuro para o texto do usuário */
+            --chat--message--user--border: none;
+
+            /* Outras Cores */
+            --chat--color-primary: #d97706; /* Cor principal para botões de resposta e links */
+            --chat--color-dark: #b45309;    /* Cor para hover */
+        }
+        /* ================================================================ */
+
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-white">
@@ -138,6 +178,25 @@
         </div>
     </div>
 
+    <div id="n8n-chat"></div>
+
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      createChat({
+        webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/6e7f6f68-9fcc-4a1f-bc77-11c8aadd1b9c/chat', // URL para demonstração
+        target: '#n8n-chat',
+        mode: 'window', // Isso fará ele flutuar no canto
+        showWelcomeScreen: false,
+        initialMessages: ['Olá!'],
+        bot: { name: 'SacadaWeb', avatar: '{{ url_for('static', filename="images/rocket.svg") }}' },
+        i18n: { 'pt-BR': { title: 'SacadaWeb', subtitle: 'Inteligência Artificial para Negócios!', inputPlaceholder: 'Olá, como posso ajudar você?' } },
+        chatInputKey: 'chatInput',
+        chatSessionKey: 'sessionId',
+        loadPreviousSession: true,
+        metadata: {},
+        defaultLanguage: 'pt-BR',
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <script>

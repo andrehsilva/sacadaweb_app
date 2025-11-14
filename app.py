@@ -129,6 +129,21 @@ def contact():
     """Renderiza a página de demonstração do chat."""
     return render_template('contact.html')
 
+@app.route('/demo-rotisseria')
+def demo_rotisseria():
+    # Renderiza o arquivo chat.html que você enviou
+    return render_template('chat.html')
+
+@app.route('/demo-educacao')
+def demo_educacao():
+    # Renderiza o futuro arquivo da escola (ex: escola.html)
+    return render_template('escola.html')
+
+@app.route('/chat-sacada')
+def chat_sacada():
+    # Renderiza o chat principal do consultor (ex: agente.html)
+    return render_template('consultor.html')
+
 @app.route('/qrcode')
 def qr_code_page():
     # Gera a URL completa para a página de contato.

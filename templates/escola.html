@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demonstração | Nhoque da Vovó</title>
-  <link rel="icon" type="image/svg+xml" href="https://www.svgrepo.com/show/492712/dough.svg">
+  <title>Secretaria Virtual | SacadaWeb Educação</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/rocket.svg') }}">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
@@ -16,22 +16,24 @@
   <script type="module">
     import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
     createChat({
-      webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/ede834d4-5d65-4af6-88f1-0340f88febc1/chat', 
+      // 🚨 IMPORTANTE: Crie um novo workflow no n8n com prompt de "Secretaria Escolar" e coloque o ID aqui
+      webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/d4986636-807a-4648-9404-f727c4e765e5/chat', 
       target: '#n8n-chat',
       mode: 'window',
       showWelcomeScreen: false,
-      initialMessages: ['Olá, netinho!'],
-      bot: { name: 'Vovó', avatar: 'https://i.ibb.co/6rC6hC4/avatar-vovo.png' },
+      initialMessages: ['Olá!'],
+      bot: { name: 'Secretaria Virtual', avatar: 'https://cdn-icons-png.flaticon.com/512/3430/3430508.png' },
       i18n: { 
         'pt-BR': { 
-            title: 'Assistente Vovó', 
-            subtitle: 'Online e com o forno ligado!', 
-            inputPlaceholder: 'Digite seu pedido aqui...' 
+            title: 'Secretaria Virtual', 
+            subtitle: 'Atendimento para pais e alunos 24h', 
+            inputPlaceholder: 'Digite sua dúvida...' 
         } 
       },
       chatInputKey: 'chatInput',
       chatSessionKey: 'sessionId',
       loadPreviousSession: true,
+      metadata: {},
       defaultLanguage: 'pt-BR',
     });
   </script>
@@ -42,12 +44,12 @@
       theme: {
         extend: {
           colors: {
-            // DEFINIÇÃO DA COR PRIMARY COMO LARANJA/AMBAR (Tema Comida)
-            primary: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
+            // Verde Esmeralda (Educação/Segurança)
+            primary: { 50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857', 800: '#065f46', 900: '#064e3b' },
             slate: { 50: '#f8fafc', 100: '#f1f5f9', 800: '#1e293b', 900: '#0f172a' }
           },
           fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif'],
           },
         }
       }
@@ -64,13 +66,14 @@
     .chat-window::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 20px; border: 3px solid transparent; }
 
     /* ================================================================ */
-    /* TEMA DO CHAT (LARANJA / ROTISSERIE) */
+    /* TEMA DO CHAT (VERDE ESMERALDA) */
     /* ================================================================ */
     :root {
-        --chat--header--background: #ea580c; /* Primary 600 */
+        --chat--header--background: #059669; /* Emerald 600 */
         --chat--header--color: #ffffff;      
+        --chat--header--border-bottom: none; 
         --chat--body--background: #FFFFFF;
-        --chat--footer--background: #fff7ed;
+        --chat--footer--background: #f8fafc;
 
         /* Janela */
         --chat--border-radius: 1.0rem;
@@ -79,37 +82,38 @@
 
         /* Input */
         --chat--input--border-radius: 0.75rem;
-        --chat--input--border: 1px solid #fed7aa; 
+        --chat--input--border: 1px solid #cbd5e1; 
         --chat--textarea--height: 50px;
 
         /* Mensagens */
-        --chat--message--bot--background: #f1f5f9;    
+        --chat--message--bot--background: #f1f5f9;    /* Cinza neutro */
         --chat--message--bot--color: #1e293b;         
         --chat--message--bot--border: 1px solid #e2e8f0;
         
-        --chat--message--user--background: #ffedd5;   /* Laranja muito claro */
-        --chat--message--user--color: #9a3412;        /* Laranja escuro */
+        --chat--message--user--background: #d1fae5;   /* Verde muito claro */
+        --chat--message--user--color: #065f46;        /* Verde escuro */
         --chat--message--user--border: none;
 
         /* Cores de Ação */
-        --chat--color-primary: #ea580c; 
-        --chat--color-dark: #c2410c;
+        --chat--color-primary: #059669; 
+        --chat--color-dark: #047857;
     }
+    /* ================================================================ */
   </style>
 </head>
 <body class="font-sans bg-slate-50 text-slate-800">
 
   <div class="bg-primary-600 text-white text-center p-2 font-medium shadow-md text-sm">
-    <i class="fas fa-utensils mr-2"></i>
-    Demonstração: IA aplicada ao atendimento de Delivery e Restaurantes.
+    <i class="fas fa-school mr-2"></i>
+    Demonstração: IA aplicada à gestão escolar e atendimento a pais.
   </div>
 
   <div id="n8n-chat"></div>
 
   <header class="container mx-auto px-6 pt-8">
-      <a href="https://sacadaweb.com.br" class="text-primary-700 hover:text-primary-900 font-semibold transition-colors inline-flex items-center group">
+      <a href="{{ url_for('home') }}" class="text-primary-700 hover:text-primary-900 font-semibold transition-colors inline-flex items-center group">
           <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
-          Voltar para SacadaWeb
+          Voltar para Home
       </a>
   </header>
 
@@ -118,18 +122,18 @@
       
       <div class="flex justify-center order-2 lg:order-1">
         <div class="relative w-full max-w-md floating">
-          <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-2xl blur opacity-30"></div>
+          <div class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-2xl blur opacity-30"></div>
           
           <div class="relative bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
             <div class="bg-primary-600 p-4 text-white flex items-center">
               <div class="flex-shrink-0">
-                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm overflow-hidden border border-white/30">
-                    <img src="https://i.ibb.co/6rC6hC4/avatar-vovo.png" alt="Vovó" class="w-full h-full object-cover">
+                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-book-reader text-lg"></i>
                 </div>
               </div>
               <div class="ml-3 leading-tight">
-                <p class="font-bold">Assistente Vovó</p>
-                <p class="text-xs opacity-90 flex items-center"><span class="w-2 h-2 bg-green-300 rounded-full mr-1 animate-pulse"></span> Forno ligado</p>
+                <p class="font-bold">Secretaria Virtual</p>
+                <p class="text-xs opacity-80 flex items-center"><span class="w-2 h-2 bg-green-300 rounded-full mr-1 animate-pulse"></span> Atendendo agora</p>
               </div>
             </div>
             
@@ -137,27 +141,28 @@
               
               <div class="flex justify-end">
                 <div class="bg-primary-100 rounded-2xl rounded-tr-none p-4 text-sm text-primary-900 max-w-[85%] shadow-sm">
-                    <p>Oi, vovó! O que tem de gostoso hoje?</p>
+                    <p>Olá! Gostaria de saber o valor da matrícula para o Ensino Fundamental II.</p>
                 </div>
               </div>
 
               <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-gray-700 max-w-[90%] self-start shadow-sm">
-                  <p class="font-semibold mb-1 text-primary-700">Vovó</p>
-                  <p>Olá, meu anjo! ❤️ Hoje fiz aquele Nhoque de Mandioquinha que você adora.</p>
-                  <p class="mt-2">Está saindo por R$ 20,00. Vai querer experimentar ou prefere ver o cardápio todo?</p>
+                  <p class="font-semibold mb-1 text-primary-700">Secretaria</p>
+                  <p>Olá! Que ótimo interesse na nossa escola. 📚</p>
+                  <p>Para o Fundamental II, temos planos a partir de R$ 890,00. Gostaria de agendar uma visita para conhecer nossa estrutura?</p>
               </div>
 
               <div class="flex justify-end">
                 <div class="bg-primary-100 rounded-2xl rounded-tr-none p-4 text-sm text-primary-900 max-w-[85%] shadow-sm">
-                    <p>Quero esse! Entrega no Centro?</p>
+                    <p>Sim, por favor! Vocês têm horário amanhã?</p>
                 </div>
               </div>
 
               <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-gray-700 max-w-[90%] self-start shadow-sm">
-                <p class="font-semibold mb-1 text-primary-700">Vovó</p>
-                <p>Entrego sim! No Centro a taxa é R$ 10,00 e chega em 30 minutinhos.</p>
-                <div class="mt-3">
-                   <button class="bg-white border border-primary-200 text-primary-700 text-xs font-bold py-1 px-3 rounded-full shadow-sm">Fechar pedido</button>
+                <p class="font-semibold mb-1 text-primary-700">Secretaria</p>
+                <p>Tenho disponível às 09h ou às 14h30. Qual fica melhor para você?</p>
+                <div class="mt-3 flex gap-2">
+                    <span class="bg-white border border-gray-300 px-2 py-1 rounded text-xs text-gray-600">09:00</span>
+                    <span class="bg-white border border-gray-300 px-2 py-1 rounded text-xs text-gray-600">14:30</span>
                 </div>
               </div>
 
@@ -175,26 +180,39 @@
       
       <div class="order-1 lg:order-2">
         <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-4 tracking-wide">
-            ROTISSERIA & DELIVERY
+            SOLUÇÃO EDUCACIONAL
         </span>
         <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-            Sabor que abraça, <span class="text-primary-600">pedido automático.</span>
+            Uma secretaria que <span class="text-primary-600">nunca fecha as portas.</span>
         </h1>
         <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-            Seus clientes não querem baixar mais um aplicativo. A "Vovó" atende no site, no WhatsApp e onde mais eles estiverem, fechando pedidos enquanto você cuida da cozinha.
+            Pais e alunos não precisam esperar o horário comercial. Nossa IA responde dúvidas, envia boletos, explica a metodologia de ensino e agenda visitas automaticamente.
         </p>
         
-        <div class="mb-10 p-5 bg-orange-50 rounded-xl border border-orange-100 transform transition hover:shadow-md">
+        <div class="mb-10 p-5 bg-emerald-50 rounded-xl border border-emerald-100 transform transition hover:shadow-md">
             <h3 class="font-bold text-primary-700 mb-3 flex items-center">
-                <i class="fas fa-receipt mr-2"></i> Integração total
+                <i class="fas fa-network-wired mr-2"></i> Esteja onde os pais estão
             </h3>
             <p class="text-sm text-slate-600 mb-4">
-                A Vovó calcula frete por bairro, verifica estoque em tempo real e envia o resumo do pedido pronto para produção:
+                Pais e alunos usam apps diferentes. A secretaria virtual unifica o atendimento e responde simultaneamente no:
             </p>
             <div class="flex items-center gap-6 text-3xl text-slate-400">
-                <i class="fab fa-whatsapp hover:text-green-500 transition-colors cursor-pointer" title="WhatsApp"></i>
-                <i class="fas fa-motorcycle hover:text-red-500 transition-colors cursor-pointer" title="Entregas"></i>
-                <i class="fas fa-file-invoice-dollar hover:text-primary-600 transition-colors cursor-pointer" title="Pedidos"></i>
+                <div class="group relative">
+                    <i class="fab fa-whatsapp hover:text-green-500 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp</span>
+                </div>
+                <div class="group relative">
+                    <i class="fab fa-instagram hover:text-pink-500 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Instagram</span>
+                </div>
+                <div class="group relative">
+                    <i class="fab fa-telegram hover:text-blue-400 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Telegram</span>
+                </div>
+                <div class="group relative">
+                    <i class="fas fa-envelope hover:text-primary-600 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">E-mail</span>
+                </div>
             </div>
         </div>
 
@@ -203,24 +221,29 @@
             
             <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-primary-500 hover:shadow-md transition-all cursor-pointer group">
                 <div class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-                    <i class="fas fa-utensils text-primary-600 group-hover:text-white transition-colors"></i>
+                    <i class="fas fa-calendar-check text-primary-600 group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-medium text-slate-700">"O que tem de promoção hoje?"</span>
+                <span class="font-medium text-slate-700">"Gostaria de agendar uma visita à escola."</span>
             </div>
             
             <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-primary-500 hover:shadow-md transition-all cursor-pointer group">
                 <div class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-                    <i class="fas fa-map-marker-alt text-primary-600 group-hover:text-white transition-colors"></i>
+                    <i class="fas fa-file-invoice-dollar text-primary-600 group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-medium text-slate-700">"Quanto é a entrega no Jardim Paulista?"</span>
+                <span class="font-medium text-slate-700">"Quais os valores para o Ensino Médio?"</span>
             </div>
             
             <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-primary-500 hover:shadow-md transition-all cursor-pointer group">
                 <div class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-                    <i class="fas fa-users text-primary-600 group-hover:text-white transition-colors"></i>
+                    <i class="fas fa-pencil-ruler text-primary-600 group-hover:text-white transition-colors"></i>
                 </div>
-                <span class="font-medium text-slate-700">"Tem tamanho família para 4 pessoas?"</span>
+                <span class="font-medium text-slate-700">"Qual a lista de materiais do 1º ano?"</span>
             </div>
+        </div>
+
+        <div class="mt-10 flex items-center gap-4 text-sm text-slate-500 bg-slate-100 p-3 rounded-lg inline-block">
+            <i class="fas fa-info-circle text-primary-600"></i>
+            <span>Ideal para Escolas, Cursos de Idiomas e Universidades.</span>
         </div>
       </div>
     </div>

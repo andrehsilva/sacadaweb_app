@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consultor Virtual | SacadaWeb</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/rocket.svg') }}">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      // 🚨 IMPORTANTE: Substitua este ID pelo Webhook do seu Agente Principal (Rodrigues)
+      webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/6e7f6f68-9fcc-4a1f-bc77-11c8aadd1b9c/chat', 
+      target: '#n8n-chat',
+      mode: 'window',
+      showWelcomeScreen: false,
+      initialMessages: ['Olá! Sou o Rodrigues, seu consultor de tecnologia.'],
+      bot: { name: 'Rodrigues | SacadaWeb', avatar: 'https://cdn-icons-png.flaticon.com/512/4712/4712109.png' },
+      i18n: { 
+        'pt-BR': { 
+            title: 'Consultor SacadaWeb', 
+            subtitle: 'Especialista em Transformação Digital', 
+            inputPlaceholder: 'Descreva seu desafio operacional...' 
+        } 
+      },
+      chatInputKey: 'chatInput',
+      chatSessionKey: 'sessionId',
+      loadPreviousSession: true,
+      metadata: {},
+      defaultLanguage: 'pt-BR',
+    });
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Azul Institucional da SacadaWeb
+            primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+            slate: { 50: '#f8fafc', 100: '#f1f5f9', 800: '#1e293b', 900: '#0f172a' }
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .floating { animation: floating 3s ease-in-out infinite; }
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .chat-window::-webkit-scrollbar { width: 6px; }
+    .chat-window::-webkit-scrollbar-track { background: transparent; }
+    .chat-window::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 20px; border: 3px solid transparent; }
+
+    /* ================================================================ */
+    /* TEMA DO CHAT (AZUL PROFISSIONAL) */
+    /* ================================================================ */
+    :root {
+        --chat--header--background: #2563eb; /* Azul Primary 600 */
+        --chat--header--color: #ffffff;      
+        --chat--header--border-bottom: none; 
+        --chat--body--background: #FFFFFF;
+        --chat--footer--background: #f8fafc;
+
+        /* Janela */
+        --chat--border-radius: 1.0rem;
+        --chat--window--width: 400px;
+        --chat--window--height: 600px;
+
+        /* Input */
+        --chat--input--border-radius: 0.75rem;
+        --chat--input--border: 1px solid #cbd5e1; 
+        --chat--textarea--height: 50px;
+
+        /* Mensagens */
+        --chat--message--bot--background: #f1f5f9;    /* Cinza neutro */
+        --chat--message--bot--color: #1e293b;         
+        --chat--message--bot--border: 1px solid #e2e8f0;
+        
+        --chat--message--user--background: #dbeafe;   /* Azul muito claro */
+        --chat--message--user--color: #1e40af;        /* Azul escuro */
+        --chat--message--user--border: none;
+
+        /* Cores de Ação */
+        --chat--color-primary: #2563eb; 
+        --chat--color-dark: #1d4ed8;
+    }
+    /* ================================================================ */
+  </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+
+  <div class="bg-primary-600 text-white text-center p-2 font-medium shadow-md text-sm">
+    <i class="fas fa-rocket mr-2"></i>
+    Ambiente de demonstração do Agente Inteligente da SacadaWeb.
+  </div>
+
+  <div id="n8n-chat"></div>
+
+  <header class="container mx-auto px-6 pt-8">
+      <a href="{{ url_for('home') }}" class="text-primary-700 hover:text-primary-900 font-semibold transition-colors inline-flex items-center group">
+          <i class="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+          Voltar para Home
+      </a>
+  </header>
+
+  <div class="container mx-auto px-6 py-8 md:py-12">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      
+      <div class="flex justify-center order-2 lg:order-1">
+        <div class="relative w-full max-w-md floating">
+          <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur opacity-30"></div>
+          
+          <div class="relative bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-primary-600 p-4 text-white flex items-center">
+              <div class="flex-shrink-0">
+                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-user-tie text-lg"></i>
+                </div>
+              </div>
+              <div class="ml-3 leading-tight">
+                <p class="font-bold">Rodrigues | Consultor</p>
+                <p class="text-xs opacity-80 flex items-center"><span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span> Online agora</p>
+              </div>
+            </div>
+            
+            <div class="p-5 space-y-5 flex flex-col h-96 overflow-y-auto chat-window bg-white">
+              
+              <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-gray-700 max-w-[90%] self-start shadow-sm">
+                  <p class="font-semibold mb-1 text-primary-700">Rodrigues</p>
+                  <p>Olá! Tudo bem? Vejo que você busca otimizar a operação da sua empresa. Qual o maior gargalo que vocês enfrentam hoje?</p>
+              </div>
+
+              <div class="flex justify-end">
+                <div class="bg-primary-100 rounded-2xl rounded-tr-none p-4 text-sm text-primary-900 max-w-[85%] shadow-sm">
+                    <p>Nossa equipe perde muito tempo preenchendo planilhas e respondendo as mesmas perguntas no WhatsApp.</p>
+                </div>
+              </div>
+
+              <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-gray-700 max-w-[90%] self-start shadow-sm">
+                <p class="font-semibold mb-1 text-primary-700">Rodrigues</p>
+                <p>Entendo perfeitamente. Esse é um caso clássico. Podemos implementar uma IA que atende o WhatsApp e joga os dados direto na planilha ou CRM.</p>
+                <p class="mt-2 text-xs text-gray-500"><i class="fas fa-check-circle text-green-500 mr-1"></i> Solução identificada: Automação Nível 2</p>
+              </div>
+              
+              <div class="flex justify-end">
+                <div class="bg-primary-100 rounded-2xl rounded-tr-none p-4 text-sm text-primary-900 max-w-[85%] shadow-sm">
+                  <p>Interessante! E quanto tempo leva pra implementar?</p>
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="border-t p-4 bg-slate-50">
+                <div class="flex items-center bg-white border border-slate-200 rounded-full px-4 py-3 shadow-sm">
+                    <div class="flex-grow h-4 bg-slate-100 rounded w-1/2"></div>
+                    <i class="fas fa-paper-plane text-primary-400 ml-4"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="order-1 lg:order-2">
+        <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-bold mb-4 tracking-wide">
+            INTELIGÊNCIA ARTIFICIAL DE VERDADE
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            Converse, tire dúvidas e <span class="text-primary-600">agende sua consultoria.</span>
+        </h1>
+        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+            Este agente não é apenas um "robô de respostas prontas". Ele foi treinado com nossa metodologia, conhece nossos cases de sucesso e pode fazer um pré-diagnóstico do seu negócio em tempo real.
+        </p>
+
+        <div class="mb-10 p-5 bg-blue-50 rounded-xl border border-blue-100 transform transition hover:shadow-md">
+            <h3 class="font-bold text-primary-700 mb-3 flex items-center">
+                <i class="fas fa-share-alt mr-2"></i> Atendimento Multicanal Integrado
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+                Seu assistente não vive apenas no site. Integre a inteligência da SacadaWeb aos canais que seu cliente já usa e centralize tudo:
+            </p>
+            <div class="flex items-center gap-6 text-3xl text-slate-400">
+                <div class="group relative">
+                    <i class="fab fa-whatsapp hover:text-green-500 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp</span>
+                </div>
+                <div class="group relative">
+                    <i class="fab fa-instagram hover:text-pink-500 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Instagram</span>
+                </div>
+                <div class="group relative">
+                    <i class="fab fa-telegram hover:text-blue-400 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Telegram</span>
+                </div>
+                <div class="group relative">
+                    <i class="fas fa-globe hover:text-primary-600 transition-colors cursor-pointer"></i>
+                    <span class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Site Web</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="space-y-4">
+            <p class="font-bold text-slate-800 mb-2">Experimente perguntar sobre:</p>
+            
+            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-primary-500 hover:shadow-md transition-all cursor-pointer group">
+                <div class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
+                    <i class="fas fa-coins text-primary-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <span class="font-medium text-slate-700">"Quanto custa automatizar meu financeiro?"</span>
+            </div>
+            
+            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-primary-500 hover:shadow-md transition-all cursor-pointer group">
+                <div class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
+                    <i class="fab fa-whatsapp text-primary-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <span class="font-medium text-slate-700">"Como a IA pode atender meus clientes no Zap?"</span>
+            </div>
+            
+            <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center gap-4 hover:border-primary-500 hover:shadow-md transition-all cursor-pointer group">
+                <div class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center group-hover:bg-primary-600 transition-colors">
+                    <i class="fas fa-industry text-primary-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <span class="font-medium text-slate-700">"Vocês já atenderam empresas do meu setor?"</span>
+            </div>
+        </div>
+
+        <div class="mt-10 flex items-center gap-4 text-sm text-slate-500">
+            <i class="fas fa-lock"></i>
+            <span>Seus dados estão seguros. Esta conversa é confidencial.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
