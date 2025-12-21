@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}
+Gestão de Agenda e Atendimento IA para Clínicas | SacadaWeb
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="bg-slate-100 relative">
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="text-center py-20 md:py-32 px-6">
+                        <div class="container mx-auto">
+                            <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                                EXCLUSIVO PARA MÉDICOS E DENTISTAS
+                            </span>
+                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                                Sua secretária virtual que <br>
+                                <span class="text-primary-600">agenda consultas 24h por dia.</span>
+                            </h1>
+                            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                                Automatize o atendimento do seu WhatsApp, reduza faltas com lembretes inteligentes e receba sua agenda pronta direto no celular.
+                            </p>
+                            <a href="#solucao-clinica" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105 text-lg">
+                                Ver como funciona
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucao-clinica" class="py-16 md:py-24 px-6 bg-white text-center">
+        <div class="container mx-auto max-w-6xl">
+            <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                FLUXO COMPLETO
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+                A tecnologia que organiza sua clínica
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Agendamento via IA</h3>
+                    <p class="text-gray-600 text-sm">Uma IA treinada para triagem, verificação de convênios e marcação de horários no WhatsApp, sem que ninguém precise digitar uma palavra.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
+                    <div class="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-columns text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Painel CRM</h3>
+                    <p class="text-gray-600 text-sm">Visualize o fluxo de pacientes em tempo real. Saiba quem agendou, quem confirmou e quem precisa de retorno em uma tela intuitiva.</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200 transition-all hover:shadow-md">
+                    <div class="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bell text-3xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Agenda no Bolso</h3>
+                    <p class="text-gray-600 text-sm">Relatórios automáticos enviados ao seu WhatsApp às 08h e às 13h com o resumo das consultas e status de confirmação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-100 py-20 md:py-28 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <div class="lg:w-1/2 flex justify-center order-last lg:order-first">
+                    <div class="relative w-full max-w-[320px] bg-white rounded-[2.5rem] shadow-2xl border-[8px] border-slate-800 overflow-hidden floating">
+                        <div class="bg-[#075e54] p-4 text-white flex items-center gap-3">
+                            <i class="fas fa-user-md text-2xl"></i>
+                            <div>
+                                <p class="text-xs font-bold">Assistente SacadaWeb</p>
+                                <p class="text-[10px] opacity-80">Online agora</p>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-[#e5ddd5] h-[400px] space-y-4 overflow-y-auto font-sans">
+                            <div class="bg-white p-3 rounded-lg shadow-sm text-[13px] max-w-[85%]">
+                                <p class="font-bold text-green-700 mb-1">📅 Resumo do Dia - Manhã</p>
+                                <p>Olá, Doutor(a)! Aqui está sua agenda confirmada:</p>
+                                <hr class="my-2 border-slate-100">
+                                <ul class="space-y-1">
+                                    <li>✅ 09:00 - Ricardo S. (Particular)</li>
+                                    <li>✅ 10:00 - Ana Clara (Convênio)</li>
+                                    <li>🔄 11:30 - Vaga aberta (Desistência preenchida por Maria P.)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-[#dcf8c6] p-3 rounded-lg shadow-sm text-[13px] max-w-[85%] self-end ml-auto">
+                                <p>Obrigado! Pode manter o encaixe das 11:30.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <span class="inline-block px-4 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold mb-4">
+                        PRODUTIVIDADE MÉDICA
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        A informação que você precisa, <span class="text-primary-600">sem abrir sistemas complexos.</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Esqueça ter que ligar para a recepção ou abrir o computador para ver como está o dia. Nós entregamos o resumo da sua manhã e tarde diretamente no seu WhatsApp pessoal.
+                    </p>
+                    <ul class="space-y-4 text-left inline-block lg:block">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary-500"></i>
+                            <span class="text-gray-700 font-medium">Confirmação automática de presença</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary-500"></i>
+                            <span class="text-gray-700 font-medium">Gestão de desistências e encaixes via IA</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary-500"></i>
+                            <span class="text-gray-700 font-medium">Integração com o seu Google Agenda ou CRM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                        GESTÃO ESTRATÉGICA
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Seu consultório organizado em um Kanban intuitivo.</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Acompanhe o trajeto do paciente desde o primeiro "Oi" no WhatsApp até o pós-consulta. Nosso CRM foi desenhado para quem não tem tempo a perder com softwares difíceis.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-l-4 border-primary-500 pl-4">
+                            <h4 class="font-bold text-gray-900">Leads Qualificados</h4>
+                            <p class="text-sm text-gray-500">Pacientes que buscaram informações.</p>
+                        </div>
+                        <div class="border-l-4 border-secondary-500 pl-4">
+                            <h4 class="font-bold text-gray-900">Agendados</h4>
+                            <p class="text-sm text-gray-500">Consultas marcadas e confirmadas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-4 rounded-2xl shadow-2xl">
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="bg-slate-700 p-3 rounded-lg min-h-[200px]">
+                            <p class="text-[10px] text-slate-400 font-bold mb-3 uppercase">Interesse</p>
+                            <div class="bg-slate-600 p-2 rounded mb-2 text-[11px] text-white">Paciente: João S.<br><span class="text-[9px] text-primary-300 italic">Dúvida sobre convênio</span></div>
+                            <div class="bg-slate-600 p-2 rounded text-[11px] text-white">Paciente: Maria L.<br><span class="text-[9px] text-primary-300 italic">Pediu horários</span></div>
+                        </div>
+                        <div class="bg-slate-700 p-3 rounded-lg min-h-[200px]">
+                            <p class="text-[10px] text-slate-400 font-bold mb-3 uppercase">Agendado</p>
+                            <div class="bg-primary-600 p-2 rounded mb-2 text-[11px] text-white shadow-lg">Paciente: Carlos R.<br><span class="text-[9px] text-white/80 italic">Confirmado para 14h</span></div>
+                        </div>
+                        <div class="bg-slate-700 p-3 rounded-lg min-h-[200px]">
+                            <p class="text-[10px] text-slate-400 font-bold mb-3 uppercase">Finalizado</p>
+                            <div class="bg-green-600 p-2 rounded mb-2 text-[11px] text-white">Paciente: Ana B.<br><span class="text-[9px] text-white/80 italic">Pós-consulta enviado</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary-900 py-16 px-6 text-center text-white">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar sua agenda em um motor de eficiência?</h2>
+            <p class="text-lg text-primary-100 mb-10">Elimine as tarefas manuais da sua recepção e foque apenas no atendimento aos seus pacientes.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://wa.me/5516991122235" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl shadow-lg transition transform hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Falar com um consultor
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
