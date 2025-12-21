@@ -144,6 +144,10 @@ def chat_sacada():
     # Renderiza o chat principal do consultor (ex: agente.html)
     return render_template('consultor.html')
 
+@app.route('/saude')
+def landing_saude():
+    return render_template('saude.html')
+
 @app.route('/qrcode')
 def qr_code_page():
     # Gera a URL completa para a página de contato.
