@@ -5,313 +5,310 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
 {% endblock %}
 
 {% block content %}
-<main>
-    <section class="bg-slate-100 relative">
-        <div class="swiper hero-slider">
+<main class="overflow-x-hidden">
+    <!-- HERO SLIDER SECTION -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white overflow-hidden py-16 md:py-24">
+        <!-- Ambient background glow -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="swiper hero-slider relative z-10">
             <div class="swiper-wrapper">
+                <!-- Slide 1 -->
                 <div class="swiper-slide">
-                    <div class="text-center py-20 md:py-32 px-6">
-                        <div class="container mx-auto">
-                            <span
-                                class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                                INTELIGÊNCIA ARTIFICIAL PARA NEGÓCIOS
+                    <div class="text-center px-6">
+                        <div class="container mx-auto max-w-4xl">
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                                <span class="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></span> Inteligência Artificial para Negócios
                             </span>
-                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-                                Tenha um vendedor que <br>
-                                <span class="text-primary-600">trabalha 24 horas por dia.</span>
+                            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.15]">
+                                Tenha um vendedor que <br class="hidden sm:inline">
+                                <span class="gradient-text">trabalha 24 horas por dia.</span>
                             </h1>
-                            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                                Nós criamos e treinamos um Especialista Virtual que atende seus clientes no
-                                WhatsApp e Instagram, para que você nunca mais perca uma oportunidade.
+                            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                                Criamos e treinamos um Especialista Virtual que atende seus clientes no WhatsApp e Instagram, garantindo que você nunca mais perca vendas.
                             </p>
-                            <a href="#contato"
-                                class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105 text-lg">
-                                Criar meu Especialista virtual
-                            </a>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="#contato"
+                                    class="w-full sm:w-auto bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-primary-600/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-base">
+                                    Criar meu Especialista Virtual
+                                </a>
+                                <a href="#demos-interativas"
+                                    class="w-full sm:w-auto bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold py-4 px-8 rounded-xl transition-all text-base">
+                                    Ver Demonstração <i class="fas fa-arrow-right ml-2 text-xs opacity-70"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 2 -->
                 <div class="swiper-slide">
-                    <div class="text-center py-20 md:py-32 px-6">
-                        <div class="container mx-auto">
-                            <span
-                                class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                                AUTOMATIZAÇÃO DE TAREFAS
+                    <div class="text-center px-6">
+                        <div class="container mx-auto max-w-4xl">
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-300 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                                Automacão Inteligente
                             </span>
-                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-                                Automatize sua operação. <br>
-                                <span class="text-primary-600">Conecte com seus clientes.</span>
+                            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.15]">
+                                Automatize sua operação. <br class="hidden sm:inline">
+                                <span class="gradient-text">Conecte-se com seus clientes.</span>
                             </h1>
-                            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                                Nós implementamos automações e inteligência artificial para que você venda mais, atenda
-                                melhor e
-                                libere seu tempo para o que realmente importa: crescer.
+                            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                                Implementamos fluxos automatizados e IA para vender mais, atender melhor e liberar sua equipe para focar no crescimento estratégico.
                             </p>
-                            <a href="#contato"
-                                class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105 text-lg">
-                                Começar a transformação
-                            </a>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="#contato"
+                                    class="w-full sm:w-auto bg-primary-600 hover:bg-primary-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-primary-600/30 transition-all transform hover:-translate-y-0.5 text-base">
+                                    Começar a Transformação
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 3 -->
                 <div class="swiper-slide">
-                    <div class="text-center py-20 md:py-32 px-6">
-                        <div class="container mx-auto">
-                            <span
-                                class="inline-block px-4 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold mb-4">
-                                ANÁLISES E INSIGHTS
+                    <div class="text-center px-6">
+                        <div class="container mx-auto max-w-4xl">
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                                Análises e Insights
                             </span>
-                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-                                Decisões inteligentes com <br>
-                                <span class="text-secondary-600">dados de verdade.</span>
+                            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.15]">
+                                Decisões inteligentes com <br class="hidden sm:inline">
+                                <span class="gradient-text-amber">dados de verdade.</span>
                             </h1>
-                            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                                Transforme cada conversa em um insight valioso. Descubra o que seus clientes mais
-                                desejam, identifique
-                                seus produtos de maior interesse e use as fraquezas e oportunidades dos seus
-                                concorrentes a seu favor.
+                            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                                Transforme cada conversa em inteligência de mercado. Descubra o que seus clientes mais desejam e antecipe tendências do setor.
                             </p>
-                            <a href="#contato"
-                                class="bg-secondary-600 hover:bg-secondary-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105 text-lg">
-                                Quero otimizar com dados
-                            </a>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="#contato"
+                                    class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-amber-600/30 transition-all transform hover:-translate-y-0.5 text-base">
+                                    Otimizar com Dados
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Slide 4 -->
                 <div class="swiper-slide">
-                    <div class="text-center py-20 md:py-32 px-6">
-                        <div class="container mx-auto">
-                            <span
-                                class="inline-block px-4 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-semibold mb-4">VERTICAL
-                                DE ESPECIALIZAÇÃO</span>
-                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">Tecnologia e
-                                IA para transformar <br><span class="text-secondary-600">a gestão da sua escola.</span>
+                    <div class="text-center px-6">
+                        <div class="container mx-auto max-w-4xl">
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                                SacadaEdu
+                            </span>
+                            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.15]">
+                                Tecnologia e IA para transformar <br class="hidden sm:inline">
+                                <span class="text-emerald-400">a gestão da sua escola.</span>
                             </h1>
-                            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">Automatize matrículas, otimize a
-                                comunicação com os pais e tome decisões baseadas em dados com nossa solução para o setor
-                                educacional.</p>
-                            <a href="{{ url_for('educacao') }}"
-                                class="bg-secondary-600 hover:bg-secondary-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105 text-lg">Conheça
-                                a Solução para Educação</a>
+                            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                                Automatize matrículas, otimize a comunicação com os pais e tome decisões baseadas em indicadores com nossa solução educacional.
+                            </p>
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a href="{{ url_for('educacao') }}"
+                                    class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 text-base">
+                                    Conhecer Solução para Educação
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination !bottom-2"></div>
         </div>
     </section>
 
-    <section id="explicacao-simples" class="py-16 md:py-24 px-6 bg-white">
-        <div class="container mx-auto text-center max-w-3xl">
-            <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                EM POUCAS PALAVRAS
-            </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                O que a SacadaWeb faz por você
-            </h2>
-            <p class="text-lg text-gray-700 mb-12"> Nós usamos <strong>Inteligência Artificial e automação</strong> para simplificar seu dia a dia.
-                Seja no comércio, na escola ou com soluções prontas, nosso objetivo é:
-            </p>
+    <!-- EXPLICAÇÃO SIMPLES -->
+    <section id="explicacao-simples" class="py-20 md:py-28 px-6 bg-white">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+                    O que a SacadaWeb faz pelo seu negócio
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Usamos <strong>Inteligência Artificial e automação de processos</strong> para simplificar a rotina da sua empresa, focando nos 3 pilares essenciais:
+                </p>
+            </div>
             
-            <div class="bg-slate-50 p-8 md:p-12 rounded-2xl shadow-lg border border-slate-200">
-                <div class="grid md:grid-cols-3 gap-8 text-left md:text-center">
-                    <div>
-                        <i class="fas fa-clock text-primary-600 text-3xl mb-4"></i>
-                        <h3 class="font-bold text-lg mb-2">Ganhar tempo</h3>
-                        <p class="text-gray-600 text-sm">Automatize tarefas repetitivas e foque no que realmente importa.
-                        </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50/80 p-8 rounded-2xl border border-slate-100 hover:border-primary-200 shadow-sm hover:shadow-soft-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-clock text-2xl"></i>
                     </div>
-                    <div>
-                        <i class="fas fa-hand-holding-usd text-secondary-600 text-3xl mb-4"></i>
-                        <h3 class="font-bold text-lg mb-2">Reduzir custos</h3>
-                        <p class="text-gray-600 text-sm">Menos esforço manual e mais eficiência em cada processo.</p>
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Ganhar tempo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Automatize tarefas repetitivas e burocráticas para que sua equipe foque nas atividades estratégicas.</p>
+                </div>
+                
+                <div class="bg-slate-50/80 p-8 rounded-2xl border border-slate-100 hover:border-amber-200 shadow-sm hover:shadow-soft-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-hand-holding-usd text-2xl"></i>
                     </div>
-                    <div>
-                        <i class="fas fa-chart-line text-primary-600 text-3xl mb-4"></i>
-                        <h3 class="font-bold text-lg mb-2">Aumentar resultados</h3>
-                        <p class="text-gray-600 text-sm">Venda mais, atenda melhor e cresça com apoio da IA.</p>
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Reduzir custos</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Elimine falhas manuais e retrabalho, reduzindo significativamente o custo operacional por atendimento.</p>
+                </div>
+                
+                <div class="bg-slate-50/80 p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-soft-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-2xl"></i>
                     </div>
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Aumentar resultados</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Venda 24/7 com respostas imediatas no WhatsApp, convertendo potenciais clientes antes da concorrência.</p>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
 
-    <section id="demos-interativas" class="py-20 md:py-28 px-6 bg-slate-50">
-        <div class="container mx-auto">
+    <!-- DEMOS INTERATIVAS -->
+    <section id="demos-interativas" class="py-20 md:py-28 px-6 bg-slate-50/70 border-y border-slate-100">
+        <div class="container mx-auto max-w-6xl">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+                <span class="inline-block px-4 py-1.5 bg-primary-100 text-primary-700 rounded-full text-xs font-semibold tracking-wider uppercase mb-4">
                     EXPERIMENTE NA PRÁTICA
                 </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
                     Converse com nossas Inteligências Artificiais
                 </h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Não fique só na teoria. Escolha uma das experiências abaixo e veja como nossos agentes funcionam em tempo real.
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Não fique só na teoria. Escolha uma das experiências abaixo e interaja com nossos agentes virtuais em tempo real.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
-
-                <div class="relative group md:-mt-4">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-primary-600 to-blue-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-200"></div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+                <!-- Card Consultor -->
+                <div class="relative group flex flex-col">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-blue-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
                     
-                    <div class="relative bg-white rounded-2xl shadow-xl border-2 border-primary-100 p-8 flex flex-col h-full transform transition duration-300 hover:-translate-y-1">
-                        <div class="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wide">
-                            Recomendado
+                    <div class="relative bg-white rounded-2xl shadow-md hover:shadow-soft-xl border border-primary-100 p-8 flex flex-col justify-between h-full transition duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center">
+                                    <i class="fas fa-robot text-2xl"></i>
+                                </div>
+                                <span class="bg-primary-600 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                    Recomendado
+                                </span>
+                            </div>
+                            
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Consultor SacadaWeb</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Converse com nosso especialista virtual. Ele irá entender seu negócio, identificar gargalos operacionais e sugerir a automação ideal para você.
+                            </p>
                         </div>
                         
-                        <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 text-primary-600">
-                            <i class="fas fa-robot text-3xl"></i>
-                        </div>
-                        
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Consultor SacadaWeb</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">
-                            Não sabe por onde começar? Converse com nosso especialista virtual. Ele vai entender seu negócio, identificar gargalos e sugerir a automação ideal para você.
-                        </p>
-                        
-                        <a href="/chat-sacada" class="w-full block text-center bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
-                            Falar com o Consultor <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="/chat-sacada" class="w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98]">
+                            Falar com o Consultor <i class="fas fa-arrow-right ml-2 text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- <div class="relative group">
-                    <div class="relative bg-white rounded-2xl shadow-lg border border-slate-200 p-8 flex flex-col h-full transform transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        
-                        <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-orange-600">
-                            <i class="fas fa-utensils text-2xl"></i>
+                <!-- Card Escola -->
+                <div class="relative group flex flex-col">
+                    <div class="relative bg-white rounded-2xl shadow-md hover:shadow-soft-xl border border-slate-200 p-8 flex flex-col justify-between h-full transition duration-300">
+                        <div>
+                            <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-graduation-cap text-2xl"></i>
+                            </div>
+                            
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Escola Inteligente</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
+                                Uma secretaria que nunca fecha. Experimente a IA especializada em tirar dúvidas de pais, explicar o processo de matrícula e agendar visitas escolares.
+                            </p>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Rotisseria da Vovó</h3>
-                        <p class="text-gray-600 mb-6 flex-grow text-sm">
-                            Veja o poder de uma IA atendendo pedidos de comida. Ela apresenta o cardápio, tira dúvidas sobre ingredientes e fecha a venda sozinha.
-                        </p>
-                        
-                        <a href="/demo-rotisseria" class="w-full block text-center bg-white border-2 border-orange-500 text-orange-600 hover:bg-orange-50 font-bold py-3 px-4 rounded-lg transition-colors">
-                            Testar Delivery <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>
-                    </div>
-                </div> -->
-
-                <div class="relative group">
-                    <div class="relative bg-white rounded-2xl shadow-lg border border-slate-200 p-8 flex flex-col h-full transform transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        
-                        <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 text-emerald-600">
-                            <i class="fas fa-graduation-cap text-2xl"></i>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Escola Inteligente</h3>
-                        <p class="text-gray-600 mb-6 flex-grow text-sm">
-                            Uma secretaria que nunca fecha. Experimente a IA que responde dúvidas de pais, explica matrículas e agenda visitas escolares.
-                        </p>
-                        
-                        <a href="/demo-educacao" class="w-full block text-center bg-white border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 font-bold py-3 px-4 rounded-lg transition-colors">
-                            Testar Secretaria <i class="fas fa-external-link-alt ml-2"></i>
+                        <a href="/demo-educacao" class="w-full text-center bg-white border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 font-bold py-3 px-4 rounded-xl transition-all active:scale-[0.98]">
+                            Testar Secretaria <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-  
-
-    <section id="solucao-chefe" class="py-20 md:py-28 px-6 bg-slate-100">
-        <div class="container mx-auto">
+    <!-- SOLUÇÃO CHEFE / CONSULTORIA ESTRATÉGICA -->
+    <section id="solucao-chefe" class="py-20 md:py-28 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="flex justify-center p-4">
-                    <div class="relative w-full max-w-sm floating">
-                        <div class="bg-white rounded-2xl shadow-2xl border overflow-hidden">
-                            <div class="bg-primary-600 p-3 text-white flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="https://ui-avatars.com/api/?name=ME&background=1d4ed8&color=fff&size=40"
-                                        alt="Avatar do Motor de Eficiência" class="rounded-full w-8 h-8">
-                                </div>
-                                <div class="ml-3 leading-tight">
-                                    <p class="font-semibold">Motor de Eficiência</p>
-                                    <p class="text-xs opacity-80">Online</p>
-                                </div>
-                            </div>
-                            <div class="p-4 space-y-3 flex flex-col h-96 overflow-y-auto">
-                                <div class="bg-gray-100 rounded-lg p-3 text-sm text-gray-800 max-w-[85%] self-start">
-                                    <p><strong>[Diretor]</strong> Olá, assistente, como está o dia de hoje?</p>
-                                </div>
-                                <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
-                                    <p><strong>[Processo 1]</strong> Relatório de performance diário gerado e enviado.
-                                    </p>
-                                </div>
-                                <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
-                                    <p><strong>[Processo 2]</strong> Novo lead do site qualificado e inserido no CRM.
-                                    </p>
-                                </div>
-                                <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
-                                    <p><strong>[Processo 3]</strong> Link de agendamento enviado ao lead qualificado.
-                                    </p>
-                                </div>
-                                <div class="bg-primary-100 rounded-lg p-3 text-sm text-primary-900 max-w-[85%] self-end">
-                                    <div class="flex items-center">
-                                        <svg class="w-4 h-4 text-primary-600 mr-2 flex-shrink-0"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                        <span>Operação otimizada!</span>
+                <!-- Mockup de Chat Operacional -->
+                <div class="flex justify-center p-2">
+                    <div class="relative w-full max-w-md">
+                        <div class="bg-white rounded-2xl shadow-soft-xl border border-slate-200 overflow-hidden">
+                            <div class="bg-primary-700 p-4 text-white flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-9 h-9 rounded-full bg-primary-500 flex items-center justify-center text-white font-bold text-sm">
+                                        IA
+                                    </div>
+                                    <div class="leading-tight">
+                                        <p class="font-semibold text-sm">Motor de Eficiência SacadaWeb</p>
+                                        <p class="text-xs text-primary-200 flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5"></span> Operação Ativa</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="border-t p-3 bg-gray-50">
-                                <div class="flex items-center bg-gray-200 rounded-full px-4 py-2">
-                                    <input type="text" placeholder="O assistente está operando..."
-                                        class="bg-transparent border-none focus:outline-none focus:ring-0 w-full text-sm placeholder:text-gray-500 cursor-not-allowed"
-                                        disabled>
+                            <div class="p-5 space-y-3.5 flex flex-col h-80 overflow-y-auto bg-slate-50/50">
+                                <div class="bg-white rounded-xl p-3.5 text-xs text-slate-700 shadow-sm border border-slate-100 max-w-[85%] self-start">
+                                    <p class="font-medium text-slate-900 mb-1">Diretor</p>
+                                    <p>Olá, assistente! Como estão os processos hoje?</p>
+                                </div>
+                                <div class="bg-primary-50 rounded-xl p-3.5 text-xs text-primary-950 shadow-sm border border-primary-100/50 max-w-[85%] self-end">
+                                    <p class="font-medium text-primary-700 mb-1">Processo Automático 1</p>
+                                    <p>Relatório diário de vendas compilado e enviado para o financeiro.</p>
+                                </div>
+                                <div class="bg-primary-50 rounded-xl p-3.5 text-xs text-primary-950 shadow-sm border border-primary-100/50 max-w-[85%] self-end">
+                                    <p class="font-medium text-primary-700 mb-1">Processo Automático 2</p>
+                                    <p>14 novos leads qualificados e inseridos automaticamente no CRM.</p>
+                                </div>
+                                <div class="bg-emerald-50 rounded-xl p-3.5 text-xs text-emerald-950 shadow-sm border border-emerald-100 max-w-[85%] self-end">
+                                    <div class="flex items-center font-medium text-emerald-700">
+                                        <i class="fas fa-check-circle mr-1.5 text-emerald-600"></i>
+                                        <span>Operação 100% otimizada sem erros.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-t border-slate-100 p-3 bg-white">
+                                <div class="flex items-center bg-slate-100 rounded-lg px-3.5 py-2">
+                                    <input type="text" placeholder="Sistema operando autonomamente..." class="bg-transparent border-none w-full text-xs text-slate-500 cursor-not-allowed" disabled>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Conteúdo -->
                 <div>
-                    <span
-                        class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                        CONSULTORIA ESTRATÉGICA EM AUTOMAÇÃO
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Sua operação no piloto automático, sua
-                        equipe no modo estratégico.</h2>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Nossa abordagem não é vender ferramentas prontas, mas construir soluções de eficiência. Mapeamos
-                        seus fluxos de trabalho, identificamos gargalos e implementamos sistemas inteligentes que
-                        automatizam tarefas, unificam dados e capacitam sua equipe a focar no que realmente gera valor.
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+                        Sua operação no piloto automático, sua equipe focada na estratégia.
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-8">
+                        Nossa abordagem é estratégica: mapeamos seus fluxos de trabalho, identificamos gargalos de tempo e implementamos sistemas inteligentes que conectam suas ferramentas.
                     </p>
+                    
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-robot text-xl text-primary-600"></i></div>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-lg">Automação de processos e tarefas</h4>
-                                <p class="text-gray-600">Liberamos sua equipe de tarefas manuais e repetitivas,
-                                    reduzindo erros e aumentando a produtividade.</p>
+                                <h4 class="font-bold text-lg text-slate-900">Automação de processos repetitivos</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">Liberamos sua equipe de tarefas manuais e burocráticas, reduzindo falhas e elevando a produtividade.</p>
                             </div>
                         </div>
+                        
                         <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-sitemap text-xl text-primary-600"></i></div>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-sitemap text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-lg">Sistemas e dados unificados</h4>
-                                <p class="text-gray-600">Conectamos suas ferramentas (planilhas, CRMs, sistemas) em uma
-                                    plataforma centralizada para uma visão 360º da sua operação.</p>
+                                <h4 class="font-bold text-lg text-slate-900">Sistemas e dados unificados</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">Conectamos suas planilhas, CRM e ferramentas em um fluxo centralizado sem retrabalho.</p>
                             </div>
                         </div>
+                        
                         <div class="flex items-start">
-                            <div
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-brain text-xl text-primary-600"></i></div>
+                            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-bold text-lg">Inteligência para decisões</h4>
-                                <p class="text-gray-600">Nossas soluções analisam dados, geram relatórios e fornecem
-                                    insights para uma gestão baseada em informações concretas.</p>
+                                <h4 class="font-bold text-lg text-slate-900">Inteligência para tomadas de decisão</h4>
+                                <p class="text-slate-600 text-sm leading-relaxed">Sistemas que analisam conversas e geram relatórios acionáveis para a diretoria.</p>
                             </div>
                         </div>
                     </div>
@@ -320,389 +317,318 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
         </div>
     </section>
 
-    <section id="processo" class="py-20 md:py-28 px-6 bg-white">
-    <div class="container mx-auto">
-        <div class="text-center mb-16">
-            <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                NOSSO PROCESSO
-            </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Como construímos sua solução
-            </h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                Nossa abordagem é consultiva e transparente, dividida em etapas claras para garantir que a solução final seja perfeitamente alinhada aos seus objetivos.
-            </p>
-        </div>
-        <div class="relative">
-            <div class="grid md:grid-cols-3 gap-y-12 md:gap-y-8 md:gap-x-16 text-center">
+    <!-- PROCESSO -->
+    <section id="processo" class="py-20 md:py-28 px-6 bg-slate-50/80 border-t border-slate-100">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+                    Como construímos sua solução
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Nossa metodologia é estruturada em 3 etapas transparentes para garantir o máximo retorno sobre o seu investimento.
+                </p>
+            </div>
 
-                <div class="flex flex-col items-center">
-                    <div class="flex items-center justify-center w-12 h-12 bg-primary-600 text-white font-bold rounded-full z-10 mb-4 text-xl">1</div>
-                    <h3 class="font-bold text-xl mb-3">Diagnóstico e Estratégia</h3>
-                    <p class="text-gray-600">Mergulhamos no seu negócio para mapear processos e desafios. A partir daí, desenhamos um plano de automação e integração totalmente personalizado, criando o blueprint da sua eficiência.</p>
+            <div class="grid md:grid-cols-3 gap-8 text-center relative">
+                <!-- Conector visual para desktop -->
+                <div class="hidden md:block absolute top-10 left-[16%] right-[16%] h-0.5 bg-slate-200 -z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative z-10">
+                    <div class="flex items-center justify-center w-14 h-14 bg-primary-600 text-white font-bold rounded-2xl ring-4 ring-primary-100 mb-6 text-xl shadow-md">
+                        1
+                    </div>
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Diagnóstico e Estratégia</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Mapeamos seus processos e desafios operacionais para desenhar um plano de automação sob medida.</p>
                 </div>
 
-                <div class="flex flex-col items-center">
-                    <div class="flex items-center justify-center w-12 h-12 bg-primary-600 text-white font-bold rounded-full z-10 mb-4 text-xl">2</div>
-                    <h3 class="font-bold text-xl mb-3">Desenvolvimento e Integração</h3>
-                    <p class="text-gray-600">É hora de construir. Executamos o plano conectando as melhores ferramentas e desenvolvendo rotinas com IA para criar um ecossistema de trabalho coeso que elimina tarefas manuais.</p>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative z-10">
+                    <div class="flex items-center justify-center w-14 h-14 bg-primary-600 text-white font-bold rounded-2xl ring-4 ring-primary-100 mb-6 text-xl shadow-md">
+                        2
+                    </div>
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Desenvolvimento e Integração</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Desenvolvemos os agentes virtuais e conectamos suas ferramentas a um ecossistema inteligente.</p>
                 </div>
 
-                <div class="flex flex-col items-center">
-                    <div class="flex items-center justify-center w-12 h-12 bg-primary-600 text-white font-bold rounded-full z-10 mb-4 text-xl">3</div>
-                    <h3 class="font-bold text-xl mb-3">Validação e Melhoria Contínua</h3>
-                    <p class="text-gray-600">Após a implementação, acompanhamos os resultados de perto para garantir o sucesso. Oferecemos suporte contínuo e otimizamos a solução para que ela evolua junto com o seu negócio.</p>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center bg-white p-8 rounded-2xl border border-slate-100 shadow-sm relative z-10">
+                    <div class="flex items-center justify-center w-14 h-14 bg-primary-600 text-white font-bold rounded-2xl ring-4 ring-primary-100 mb-6 text-xl shadow-md">
+                        3
+                    </div>
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Validação e Melhoria</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Acompanhamos os primeiros resultados de perto, refinando o atendimento para maximizar conversões.</p>
                 </div>
-
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <section class="bg-slate-100 py-20 md:py-28 px-6">
-        <div class="container mx-auto">
+    <!-- OTIMIZAÇÃO DE TEMPO -->
+    <section class="py-20 md:py-28 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl">
             <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16">
                 <div class="lg:w-1/2 text-center lg:text-left">
-                    <span
-                        class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                        OTIMIZAÇÃO DE TEMPO
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
                         Sua agenda no <span class="text-primary-600">piloto automático.</span>
                     </h2>
-                    <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
-                        Deixe que a IA cuide dos seus compromissos. Automatize agendamentos e envie lembretes via
-                        WhatsApp e e-mail para você e seus clientes, reduzindo faltas e otimizando seu dia.
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Deixe que a IA cuide dos seus compromissos. Automatize agendamentos e envie lembretes preventivos via WhatsApp para eliminar faltas.
                     </p>
-                    <div class="mt-8">
+                    <div>
                         <a href="#contato"
-                            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-md transition-all active:scale-[0.98]">
                             Otimizar meu tempo
                         </a>
                     </div>
                 </div>
                 <div class="lg:w-1/2 flex justify-center">
-                    <img src="{{ url_for('static', filename='images/3.png') }}" alt="Calendário digital com ícones"
-                        class="rounded-2xl shadow-xl max-w-full w-[480px] floating">
+                    <img src="{{ url_for('static', filename='images/3.png') }}" alt="Calendário automatizado"
+                        class="rounded-2xl shadow-soft-xl max-w-full w-[460px] floating">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white text-gray-900 py-24">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+    <!-- INTEGRAÇÃO DE SISTEMAS -->
+    <section class="py-20 md:py-28 px-6 bg-slate-50/80 border-t border-slate-100">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                 <div class="lg:w-1/2 flex justify-center">
-                    <svg class="rounded-2xl shadow-xl max-w-full w-[480px] floating" viewBox="0 0 900 700"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect width="900" height="700" fill="#f8f9fa" />
+                    <div class="bg-white p-4 rounded-2xl shadow-soft-xl border border-slate-200 max-w-full">
+                        <svg class="w-full h-auto max-w-[460px] rounded-xl" viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="900" height="700" fill="#f8fafc" />
+                            <g transform="translate(90, 90)">
+                                <rect x="50" y="50" width="120" height="120" rx="20" fill="#9C27B0" />
+                                <circle cx="110" cy="110" r="40" fill="white" />
+                                <circle cx="110" cy="110" r="3" fill="#9C27B0" />
+                                <line x1="110" y1="110" x2="110" y2="85" stroke="#9C27B0" stroke-width="3" />
+                                <line x1="110" y1="110" x2="125" y2="110" stroke="#9C27B0" stroke-width="2" />
 
-                        <g transform="translate(90, 90)">
+                                <rect x="250" y="50" width="120" height="120" rx="20" fill="#2563eb" />
+                                <polygon points="290,90 330,90 340,100 340,130 280,130 280,100" fill="#FFD700" />
+                                <polygon points="280,100 320,100 320,130 280,130" fill="#81C784" />
+                                <polygon points="320,100 340,100 340,130 320,130" fill="#bfdbfe" />
 
-                            <rect x="50" y="50" width="120" height="120" rx="20" fill="#9C27B0" />
-                            <circle cx="110" cy="110" r="40" fill="white" />
-                            <circle cx="110" cy="110" r="3" fill="#9C27B0" />
-                            <line x1="110" y1="110" x2="110" y2="85" stroke="#9C27B0" stroke-width="3" />
-                            <line x1="110" y1="110" x2="125" y2="110" stroke="#9C27B0" stroke-width="2" />
+                                <rect x="450" y="50" width="120" height="120" rx="20" fill="#8BC34A" />
+                                <rect x="470" y="70" width="80" height="80" rx="5" fill="white" />
+                                <text x="510" y="95" text-anchor="middle" font-size="24" font-weight="bold" fill="#8BC34A">X</text>
+                                <line x1="470" y1="105" x2="550" y2="105" stroke="#8BC34A" stroke-width="2" />
+                                <line x1="470" y1="120" x2="550" y2="120" stroke="#8BC34A" stroke-width="2" />
+                                <line x1="470" y1="135" x2="550" y2="135" stroke="#8BC34A" stroke-width="2" />
 
+                                <rect x="650" y="50" width="120" height="120" rx="20" fill="#FF5722" />
+                                <rect x="670" y="80" width="80" height="50" rx="5" fill="white" />
 
-                            <rect x="250" y="50" width="120" height="120" rx="20" fill="#2563eb" />
-                            <polygon points="290,90 330,90 340,100 340,130 280,130 280,100" fill="#FFD700" />
-                            <polygon points="280,100 320,100 320,130 280,130" fill="#81C784" />
-                            <polygon points="320,100 340,100 340,130 320,130" fill="#bfdbfe" />
-
-                            <rect x="450" y="50" width="120" height="120" rx="20" fill="#8BC34A" />
-                            <rect x="470" y="70" width="80" height="80" rx="5" fill="white" />
-                            <text x="510" y="95" text-anchor="middle" font-size="24" font-weight="bold"
-                                fill="#8BC34A">X</text>
-                            <line x1="470" y1="105" x2="550" y2="105" stroke="#8BC34A" stroke-width="2" />
-                            <line x1="470" y1="120" x2="550" y2="120" stroke="#8BC34A" stroke-width="2" />
-                            <line x1="470" y1="135" x2="550" y2="135" stroke="#8BC34A" stroke-width="2" />
-
-                            <rect x="650" y="50" width="120" height="120" rx="20" fill="#FF5722" />
-                            <rect x="670" y="80" width="80" height="50" rx="5" fill="white" />
-                            <rect x="675" y="85" width="10" height="20" fill="#FF5722" />
-                            <rect x="690" y="85" width="10" height="20" fill="#FF5722" />
-                            <rect x="705" y="85" width="10" height="20" fill="#FF5722" />
-                            <rect x="720" y="85" width="10" height="20" fill="#FF5722" />
-                            <rect x="735" y="85" width="10" height="20" fill="#FF5722" />
-                            <rect x="670" y="115" width="80" height="10" fill="#FF5722" />
-
-                            <rect x="650" y="250" width="120" height="120" rx="20" fill="#FF9800" />
-                            <rect x="670" y="270" width="80" height="80" rx="5" fill="white" />
-                            <text x="710" y="295" text-anchor="middle" font-size="20" font-weight="bold"
-                                fill="#FF9800">A</text>
-                            <line x1="670" y1="305" x2="750" y2="305" stroke="#FF9800" stroke-width="2" />
-                            <line x1="670" y1="320" x2="750" y2="320" stroke="#FF9800" stroke-width="2" />
-                            <line x1="670" y1="335" x2="750" y2="335" stroke="#FF9800" stroke-width="2" />
-
-                            <rect x="450" y="450" width="120" height="120" rx="20" fill="#2196F3" />
-                            <rect x="470" y="480" width="80" height="50" rx="5" fill="white" />
-                            <polygon points="470,480 550,480 510,510 470,480" fill="#2196F3" />
-                            <line x1="470" y1="480" x2="510" y2="510" stroke="white" stroke-width="2" />
-                            <line x1="510" y1="510" x2="550" y2="480" stroke="white" stroke-width="2" />
-                            <text x="510" y="555" text-anchor="middle" font-size="12" font-weight="bold"
-                                fill="#2196F3">OUTPUT</text>
-
-                            <rect x="250" y="450" width="120" height="120" rx="20" fill="#4A154B" />
-                            <rect x="270" y="480" width="80" height="50" rx="10" fill="white" />
-                            <text x="310" y="500" text-anchor="middle" font-size="16" font-weight="bold"
-                                fill="#4A154B">#</text>
-                            <text x="310" y="520" text-anchor="middle" font-size="12" fill="#4A154B">slack</text>
-
-                            <rect x="50" y="250" width="120" height="120" rx="20" fill="#607D8B" />
-                            <ellipse cx="110" cy="280" rx="40" ry="15" fill="white" />
-                            <ellipse cx="110" cy="300" rx="40" ry="15" fill="white" />
-                            <ellipse cx="110" cy="320" rx="40" ry="15" fill="white" />
-                            <ellipse cx="110" cy="340" rx="40" ry="15" fill="white" />
-
-                            <path d="M 170 110 L 240 110" stroke="#333" stroke-width="3" fill="none"
-                                marker-end="url(#arrowhead)" />
-                            <path d="M 370 110 L 440 110" stroke="#333" stroke-width="3" fill="none"
-                                marker-end="url(#arrowhead)" />
-                            <path d="M 570 110 L 640 110" stroke="#333" stroke-width="3" fill="none"
-                                marker-end="url(#arrowhead)" />
-                            <path d="M 710 170 L 710 240" stroke="#333" stroke-width="3" fill="none"
-                                marker-end="url(#arrowhead)" />
-                            <path d="M 510 170 Q 510 210 350 210 Q 200 210 110 240" stroke="#333" stroke-width="3"
-                                fill="none" marker-end="url(#arrowhead)" />
-                            <path d="M 710 370 Q 710 410 590 410 Q 510 410 510 440" stroke="#333" stroke-width="3"
-                                fill="none" marker-end="url(#arrowhead)" />
-                            <path d="M 640 310 Q 500 310 400 310 Q 310 310 310 440" stroke="#333" stroke-width="3"
-                                fill="none" marker-end="url(#arrowhead)" />
-                            <path d="M 50 310 Q 20 310 20 180 Q 20 110 40 110" stroke="#333" stroke-width="3" fill="none"
-                                marker-end="url(#arrowhead)" stroke-dasharray="5,5" />
-
-                            <circle cx="170" cy="110" r="6" fill="#333" />
-                            <circle cx="240" cy="110" r="6" fill="#333" />
-                            <circle cx="440" cy="110" r="6" fill="#333" />
-                            <circle cx="640" cy="110" r="6" fill="#333" />
-                            <circle cx="710" cy="240" r="6" fill="#333" />
-                            <circle cx="350" cy="210" r="6" fill="#333" />
-                            <circle cx="200" cy="210" r="6" fill="#333" />
-                            <circle cx="110" cy="240" r="6" fill="#333" />
-                            <circle cx="710" cy="370" r="6" fill="#333" />
-                            <circle cx="590" cy="410" r="6" fill="#333" />
-                            <circle cx="510" cy="440" r="6" fill="#333" />
-                            <circle cx="640" cy="310" r="6" fill="#333" />
-                            <circle cx="400" cy="310" r="6" fill="#333" />
-                            <circle cx="310" cy="440" r="6" fill="#333" />
-                            <circle cx="50" cy="310" r="6" fill="#333" />
-                            <circle cx="20" cy="180" r="6" fill="#333" />
-                            <circle cx="40" cy="110" r="6" fill="#333" />
-
-                        </g>
-                        <defs>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5"
-                                orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
-                            </marker>
-                        </defs>
-
-                    </svg>
+                                <path d="M 170 110 L 240 110" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+                                <path d="M 370 110 L 440 110" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+                                <path d="M 570 110 L 640 110" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+                            </g>
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#334155" />
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
+                
                 <div class="lg:w-1/2">
-                    <span
-                        class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                        AUTOMATIZAÇÃO DE TAREFAS
-                    </span>
-                    <h2 class="text-4xl md:text-4xl font-bold leading-tight mb-6">Automatize processos com <span
-                            class="text-primary-600 font-extrabold">eficiência</span></h2>
-                    <p class="text-lg text-gray-700 mb-8">Conecte drive, planilhas e outras ferramentas à IA para
-                        agilizar a
-                        rotina, eliminando retrabalho e tarefas manuais.</p>
-                    <ul class="space-y-3 text-base text-gray-800">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i>
-                            Integração com
-                            sistemas internos</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Fluxos
-                            automatizados com IA</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-primary-500 mr-2"></i> Acesso e
-                            envio de
-                            dados via drive, whatsApp e mais</li>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-6 tracking-tight">
+                        Automatize fluxos com <span class="text-primary-600">eficiência</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Conecte planilhas, sistemas internos e bancos de dados aos nossos agentes de IA para eliminar o trabalho manual.
+                    </p>
+                    <ul class="space-y-3.5 text-slate-700 text-base mb-8">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary-600 mr-3"></i> Integração com sistemas via API e webhooks</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary-600 mr-3"></i> Notificações e relatórios em tempo real no WhatsApp</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-primary-600 mr-3"></i> Redução drástica do erro humano em planilhas</li>
                     </ul>
-                    <div class="mt-8">
+                    <div>
                         <a href="#contato"
-                            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">Automatizar
-                            minhas tarefas</a>
+                            class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3.5 px-8 rounded-xl shadow-md transition-all active:scale-[0.98]">
+                            Automatizar Minhas Tarefas
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="dados-insights" class="py-20 md:py-28 px-6 bg-slate-800 text-slate-300">
-    <div class="container mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="flex justify-center lg:order-last">
-                <img src="{{ url_for('static', filename='images/2.png') }}" alt="Painel com gráficos e dados de análise de negócio" class="rounded-2xl shadow-xl max-w-full w-[480px] floating">
-            </div>
-            <div class="lg:order-first">
-                <span class="inline-block px-4 py-1 bg-slate-700 text-secondary-400 rounded-full text-sm font-semibold mb-4">INTELIGÊNCIA DE DADOS</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Seus dados escondem oportunidades. <span class="text-secondary-400">Nós as revelamos.</span></h2>
-                <p class="text-lg text-slate-300 mb-8">Nossa expertise é transformar dados brutos em estratégia. Analisamos o histórico de conversas e os indicadores da sua operação para gerar insights e relatórios claros que mostram exatamente onde focar para crescer.</p>
-                <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center mr-4">
-                            <i class="fas fa-users text-xl text-secondary-400"></i>
+    <!-- INTELIGÊNCIA DE DADOS -->
+    <section id="dados-insights" class="py-20 md:py-28 px-6 bg-slate-900 text-slate-300 relative overflow-hidden">
+        <!-- Accent Glow -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="flex justify-center lg:order-last">
+                    <img src="{{ url_for('static', filename='images/2.png') }}" alt="Painel de inteligência de dados" class="rounded-2xl shadow-2xl max-w-full w-[460px] floating border border-slate-800">
+                </div>
+                <div class="lg:order-first">
+                    <span class="inline-block px-3.5 py-1 bg-slate-800 text-amber-400 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 border border-slate-700">
+                        INTELIGÊNCIA DE DADOS
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight tracking-tight">
+                        Seus dados escondem oportunidades. <span class="text-amber-400">Nós as revelamos.</span>
+                    </h2>
+                    <p class="text-base text-slate-300 leading-relaxed mb-8">
+                        Transformamos dados de atendimento em inteligência comercial. Analisamos históricos de conversas para gerar relatórios acionáveis sobre o comportamento do seu consumidor.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mr-4 border border-amber-500/20">
+                                <i class="fas fa-users text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base text-white">Inteligência sobre seus clientes</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Descubra as dúvidas mais frequentes e as principais objeções de venda para refinar sua oferta.</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Inteligência sobre seus clientes</h4>
-                            <p>Descubra os produtos mais pedidos, as dúvidas mais comuns e as principais objeções de venda para refinar sua oferta.</p>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mr-4 border border-amber-500/20">
+                                <i class="fas fa-chart-line text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base text-white">Otimização da operação</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Monitore o tempo de resposta e identifique gargalos para tornar o atendimento mais ágil.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center mr-4">
-                            <i class="fas fa-chart-line text-xl text-secondary-400"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Otimização da sua operação</h4>
-                            <p>Identifique gargalos, monitore o tempo de resposta e analise a performance para tornar seu atendimento mais rápido e eficiente.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-secondary-500/10 flex items-center justify-center mr-4">
-                            <i class="fas fa-lightbulb text-xl text-secondary-400"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Análise de mercado e tendências</h4>
-                            <p>Detecte a demanda por novos produtos/serviços e entenda o que seus clientes falam sobre concorrentes para se posicionar à frente.</p>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mr-4 border border-amber-500/20">
+                                <i class="fas fa-lightbulb text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base text-white">Análise de tendências</h4>
+                                <p class="text-slate-400 text-sm leading-relaxed">Detecte demandas reprimidas por novos produtos e acompanhe mencões a concorrentes.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- <section id="clientes-satisfeitos" class="py-20 md:py-28 px-6 bg-white">
-        <div class="container mx-auto">
-            <div class="text-center">
-                <span
-                    class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                    QUEM CONFIA, RECOMENDA
-                </span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Empresas que confiam em nosso trabalho</h2>
-            </div>
-
-            <div class="mt-16">
-                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 md:gap-x-16 lg:gap-x-24">
-                    <img class="max-h-20 md:max-h-24 w-auto grayscale opacity-70 transition duration-300 hover:grayscale-0 hover:opacity-100"
-                        src="{{ url_for('static', filename='images/novomundo.png') }}"
-                        alt="Novo Mundo das Tintas" />
-                    <img class="max-h-20 md:max-h-24 w-auto grayscale opacity-70 transition duration-300 hover:grayscale-0 hover:opacity-100"
-                        src="{{ url_for('static', filename='images/planetaimaginario.png') }}"
-                        alt="Planeta Imaginario Campinas" />
-                    
-                    <img class="max-h-20 md:max-h-24 w-auto grayscale opacity-70 transition duration-300 hover:grayscale-0 hover:opacity-100"
-                        src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-                        alt="Logo do Cliente SavvyCal" />
-                    <img class="max-h-20 md:max-h-24 w-auto grayscale opacity-70 transition duration-300 hover:grayscale-0 hover:opacity-100"
-                        src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-                        alt="Logo do Cliente Statamic" />
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section id="jornadas" class="py-20 md:py-28 px-6 bg-slate-100">
-    <div class="container mx-auto">
-        <div class="text-center mb-16 max-w-3xl mx-auto">
-            <span class="inline-block px-4 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
-                INTELIGÊNCIA ARTIFICIAL, AUTOMAÇÃO, ANÁLISES E INSIGHTS
-            </span>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-y-10 md:gap-y-0 max-w-5xl mx-auto">
-
-            <div class="flex flex-col items-center text-center px-4 md:px-8">
-                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
-                    <i class="fas fa-briefcase text-3xl text-primary-600"></i>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Para seu Negócio</h3>
-                <p class="text-gray-600 mb-8 flex-grow">
-                    Mapeamos seus processos e implementamos uma solução de automação sob medida para reduzir custos, otimizar o tempo da sua equipe e aumentar suas vendas.
+    <!-- JORNADAS POR VERTICAL -->
+    <section id="jornadas" class="py-20 md:py-28 px-6 bg-slate-50/80">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+                    Soluções sob medida para o seu setor
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Desenvolvemos ecossistemas focados no seu modelo de negócio.
                 </p>
-                <a href="#contato"
-                    class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105">
-                    Começar a transformação
-                </a>
             </div>
 
-            <div class="flex flex-col items-center text-center px-4 md:px-8 border-t md:border-t-0 md:border-l border-slate-200 pt-10 md:pt-0">
-                <div class="flex-shrink-0 w-16 h-16 rounded-full bg-secondary-100 flex items-center justify-center mb-6">
-                    <i class="fas fa-graduation-cap text-3xl text-secondary-600"></i>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Negócios em Geral -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-soft-xl transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-primary-100 text-primary-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-briefcase text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Para seu Negócio</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
+                            Mapeamos seus processos e implementamos uma solução de automação sob medida para reduzir custos operacionais e aumentar suas vendas.
+                        </p>
+                    </div>
+                    <a href="#contato"
+                        class="w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3.5 px-6 rounded-xl shadow transition-all active:scale-[0.98]">
+                        Começar a Transformação
+                    </a>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Para sua escola</h3>
-                <p class="text-gray-600 mb-8 flex-grow">
-                    Uma solução especializada que entende os desafios do setor educacional, automatizando matrículas, a comunicação com pais e a gestão de dados.
-                </p>
-                <a href="/educacao"
-                    class="inline-block bg-secondary-600 hover:bg-secondary-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105">
-                    Transforme sua escola com IA
-                </a>
+
+                <!-- Educação -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-soft-xl transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Para sua Escola</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
+                            Solução especializada para o setor educacional: automação de matrículas, atendimento a pais de alunos e integração de secretarias.
+                        </p>
+                    </div>
+                    <a href="{{ url_for('educacao') }}"
+                        class="w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 px-6 rounded-xl shadow transition-all active:scale-[0.98]">
+                        Transformar minha Escola
+                    </a>
+                </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- FORMULÁRIO DE CONTATO -->
     <section id="contato" class="py-20 md:py-28 px-6 bg-white">
-        <div class="container mx-auto">
-            <div class="max-w-5xl mx-auto bg-slate-50 rounded-2xl shadow-2xl overflow-hidden md:flex">
-                <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-primary-800 text-white">
-                    <h2 class="text-3xl font-bold mb-4">Chega de tarefas manuais. <br>É hora de acelerar.</h2>
-                    <p class="mb-6 text-primary-100">Vamos entender juntos como a SacadaWeb pode transformar sua
-                        operação. Preencha o formulário e um de nossos especialistas entrará em contato.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary-400 mr-3"></i>Diagnóstico
-                            gratuito do seu negócio.</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary-400 mr-3"></i>Solução
-                            100% personalizada.</li>
+        <div class="container mx-auto max-w-5xl">
+            <div class="bg-slate-50 rounded-3xl shadow-2xl border border-slate-100 overflow-hidden md:flex">
+                <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-between bg-gradient-to-br from-primary-800 via-primary-900 to-slate-950 text-white">
+                    <div>
+                        <span class="inline-block px-3 py-1 bg-primary-700/60 text-primary-200 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 border border-primary-600/30">
+                            Fale com um Especialista
+                        </span>
+                        <h2 class="text-3xl font-bold mb-4 tracking-tight leading-tight">Chega de tarefas manuais. <br>É hora de acelerar.</h2>
+                        <p class="mb-8 text-primary-200 text-sm leading-relaxed">
+                            Preencha o formulário e nossa equipe agendará uma análise gratuita do seu negócio.
+                        </p>
+                    </div>
+                    
+                    <ul class="space-y-4 text-sm text-primary-100 border-t border-primary-700/50 pt-6">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3 text-base"></i>Diagnóstico gratuito de processos.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3 text-base"></i>Solução 100% personalizada.</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3 text-base"></i>Sem fidelidade nem contratos abusivos.</li>
                     </ul>
                 </div>
-                <div class="md:w-1/2 p-8 md:p-12">
+
+                <div class="md:w-1/2 p-8 md:p-12 bg-white">
                     <form id="contact-form" class="space-y-5">
                         <div>
-                            <label for="nome" class="block text-gray-700 font-medium mb-1 text-sm">Seu nome</label>
+                            <label for="nome" class="block text-slate-700 font-medium mb-1.5 text-xs uppercase tracking-wider">Seu Nome</label>
                             <input type="text" id="nome" name="nome"
-                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-600"
+                                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm"
+                                placeholder="Digite seu nome completo"
                                 required>
                         </div>
                         <div>
-                            <label for="empresa" class="block text-gray-700 font-medium mb-1 text-sm">Nome do seu negócio</label>
+                            <label for="empresa" class="block text-slate-700 font-medium mb-1.5 text-xs uppercase tracking-wider">Nome da Empresa</label>
                             <input type="text" id="empresa" name="empresa"
-                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-600"
+                                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm"
+                                placeholder="Sua empresa ou projeto"
                                 required>
                         </div>
                         <div>
-                            <label for="whatsapp" class="block text-gray-700 font-medium mb-1 text-sm">WhatsApp</label>
+                            <label for="whatsapp" class="block text-slate-700 font-medium mb-1.5 text-xs uppercase tracking-wider">WhatsApp</label>
                             <input type="tel" id="whatsapp" name="whatsapp"
-                                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary-600"
+                                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm"
+                                placeholder="(16) 99999-9999"
                                 required>
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">E-mail profissional</label>
+                            <label for="email" class="block text-slate-700 font-medium mb-1.5 text-xs uppercase tracking-wider">E-mail Profissional</label>
                             <input type="email" id="email" name="email"
-                                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-600"
-                                placeholder="seu@negocio.com" required>
-                            <span id="email-error" class="text-red-500 text-sm mt-1 hidden">Por favor, insira um e-mail
-                                válido.</span>
+                                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm"
+                                placeholder="seuname@empresa.com" required>
+                            <span id="email-error" class="text-red-500 text-xs mt-1 hidden">Por favor, insira um e-mail válido.</span>
                         </div>
-                        <div>
-                            <button type="submit" id="submit-button"
-                                class="w-full bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
-                                disabled>
-                                Agendar análise gratuita
-                            </button>
-                        </div>
-                        <div class="flex items-start">
+                        
+                        <div class="flex items-start pt-1">
                             <input type="checkbox" id="privacy-consent-checkbox" name="privacy-consent"
-                                class="h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500 mt-0.5">
-                            <label for="privacy-consent-checkbox" class="ml-3 text-sm text-gray-600">
+                                class="h-4 w-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500 mt-0.5 cursor-pointer">
+                            <label for="privacy-consent-checkbox" class="ml-2.5 text-xs text-slate-600 leading-normal cursor-pointer">
                                 Li e concordo com a <a href="{{ url_for('privacy_policy') }}" target="_blank"
                                     class="text-primary-600 font-semibold hover:underline">Política de Privacidade</a>.
                             </label>
+                        </div>
+
+                        <div>
+                            <button type="submit" id="submit-button"
+                                class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                                disabled>
+                                Agendar Análise Gratuita
+                            </button>
                         </div>
                     </form>
                 </div>

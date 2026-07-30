@@ -1,4 +1,4 @@
- Arquivos de ambiente - NUNCA envie para o GitHub!
+# Arquivos de ambiente - NUNCA envie para o GitHub!
 .env
 
 # Banco de dados SQLite
@@ -12,3 +12,7 @@ __pycache__/
 # Outras pastas de ambiente virtual (opcional, mas boa prática)
 venv/
 .venv/
+
+# Configurações do Antigravity AG Kit e backups de templates
+.agents/
+templates/_backup/

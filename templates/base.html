@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>{% block title %}SacadaWeb{% endblock %}</title>
+    <title>{% block title %}SacadaWeb | IA e Automação para Negócios{% endblock %}</title>
 
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/rocket.svg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
@@ -22,103 +24,141 @@
                     colors: {
                         primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
                         secondary: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
+                        slate: { 850: '#152033', 950: '#0b1120' }
                     },
-                    fontFamily: { sans: ['DM Sans', 'sans-serif'] },
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    boxShadow: {
+                        'glow': '0 0 25px -5px rgba(37, 99, 235, 0.25)',
+                        'glow-lg': '0 0 40px -10px rgba(37, 99, 235, 0.35)',
+                        'soft-xl': '0 20px 40px -15px rgba(15, 23, 42, 0.08)'
+                    }
                 }
             }
         }
     </script>
     <style>
-        .floating { animation: floating 3s ease-in-out infinite; }
-        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-        .swiper-pagination-bullet-active { background-color: #2563eb; opacity: 1; }
+        h1, h2, h3 { text-wrap: balance; }
+        p { text-wrap: pretty; }
+        
+        .floating { animation: floating 4s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        
+        .swiper-pagination-bullet { width: 10px; height: 10px; transition: all 0.3s ease; }
+        .swiper-pagination-bullet-active { background-color: #2563eb; width: 28px; border-radius: 9999px; opacity: 1; }
         #fullscreen-menu.is-open { opacity: 1; pointer-events: auto; }
 
-        /* ================================================================ */
-        /* REGRAS DE CSS ATUALIZADAS PARA O TEMA DA ROTISSERIA (CHATBOT) */
-        /* ================================================================ */
+        /* Nav link hover underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-text-amber {
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-scale-in { animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+        /* REGRAS DE CSS DO CHATBOT */
         :root {
-            /* Cores Globais e do Header */
-            --chat--header--background: #3908e9; /* Topo âmbar escuro (cor de molho) */
-            --chat--header--color: #ebebf0;      
+            --chat--header--background: #1e40af;
+            --chat--header--color: #ffffff;      
             --chat--header--border-bottom: none; 
             --chat--body--background: #FFFFFF;
-            --chat--footer--background: #f8fafc; /* Fundo levemente acinzentado */
+            --chat--footer--background: #f8fafc;
 
-            /* Janela e Bordas */
-            --chat--border-radius: 1.0rem;
+            --chat--border-radius: 1.25rem;
             --chat--window--width: 400px;
             --chat--window--height: 600px;
 
-            /* Campo de Digitação (Textarea) */
             --chat--input--border-radius: 0.75rem;
-            --chat--input--border: 1px solid #d1d5db; 
+            --chat--input--border: 1px solid #e2e8f0; 
             --chat--textarea--height: 50px;
             --chat--input--send--button--background: transparent;
 
-            /* Balões de Mensagem */
-            --chat--message--bot--background: #f1f5f9;    /* Cinza claro para a vovó */
-            --chat--message--bot--color: #1f2937;         
-            --chat--message--bot--border: 1px solid #e5e7eb;
-            --chat--message--user--background: #fef3c7;   /* Amarelo claro para o usuário */
-            --chat--message--user--color: #92400e;        /* Marrom escuro para o texto do usuário */
+            --chat--message--bot--background: #f1f5f9;
+            --chat--message--bot--color: #0f172a;         
+            --chat--message--bot--border: 1px solid #e2e8f0;
+            --chat--message--user--background: #dbeafe;
+            --chat--message--user--color: #1e3a8a;
             --chat--message--user--border: none;
 
-            /* Outras Cores */
-            --chat--color-primary: #d97706; /* Cor principal para botões de resposta e links */
-            --chat--color-dark: #b45309;    /* Cor para hover */
+            --chat--color-primary: #2563eb;
+            --chat--color-dark: #1d4ed8;
         }
-        /* ================================================================ */
-
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-white">
+<body class="font-sans antialiased text-slate-800 bg-white selection:bg-primary-500 selection:text-white">
 
-    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
-                <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm">
-                    <i class="fas fa-rocket text-xl"></i>
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all duration-200">
+        <div class="container mx-auto px-6 py-3.5 flex items-center justify-between">
+            <a href="{{ url_for('home') }}" class="flex items-center space-x-3 group">
+                <div class="bg-gradient-to-tr from-primary-700 to-primary-500 text-white p-2.5 rounded-xl shadow-md shadow-primary-500/20 group-hover:scale-105 transition-transform">
+                    <i class="fas fa-rocket text-lg"></i>
                 </div>
-                <span class="text-2xl font-bold text-gray-800">Sacada<span class="text-primary-600">Web</span></span>
+                <span class="text-2xl font-bold tracking-tight text-slate-900">Sacada<span class="text-primary-600">Web</span></span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="{{ url_for('home') }}#solucao-chefe" class="text-gray-700 font-medium hover:text-primary-600 transition">Consultoria estratégica</a>
-                <a href="{{ url_for('home') }}#processo" class="text-gray-700 font-medium hover:text-primary-600 transition">Nosso processo</a>
+                <a href="{{ url_for('home') }}#solucao-chefe" class="nav-link text-slate-700 font-medium hover:text-primary-600 transition text-sm">Consultoria estratégica</a>
+                <a href="{{ url_for('home') }}#processo" class="nav-link text-slate-700 font-medium hover:text-primary-600 transition text-sm">Nosso processo</a>
+                <a href="{{ url_for('educacao') }}" class="nav-link text-slate-700 font-medium hover:text-primary-600 transition text-sm">Para Escolas</a>
                 
-                <div class="flex items-center space-x-4">
-                    <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105" title="Fale conosco pelo WhatsApp">
-                        <i class="fab fa-whatsapp text-xl"></i>
+                <div class="flex items-center space-x-3.5 pl-2">
+                    <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md transition-all text-sm active:scale-[0.98]" title="Fale conosco pelo WhatsApp">
+                        <i class="fab fa-whatsapp text-base"></i>
                         <span>WhatsApp</span>
                     </a>
                     
-                    <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-md transition transform hover:scale-105">
+                    <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg shadow-sm shadow-primary-600/30 hover:shadow-md transition-all text-sm active:scale-[0.98]">
                         Falar com especialista
                     </a>
                 </div>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+            <button id="mobile-menu-button" class="md:hidden text-slate-700 hover:text-primary-600 p-2 focus:outline-none" aria-label="Menu principal"><i class="fas fa-bars text-xl"></i></button>
         </div>
     </header>
 
-    <div id="fullscreen-menu" class="fixed inset-0 bg-white z-50 flex flex-col transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <div id="fullscreen-menu" class="fixed inset-0 bg-white/98 backdrop-blur-lg z-50 flex flex-col transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between border-b border-slate-100">
             <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
                 <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm"><i class="fas fa-rocket text-xl"></i></div>
-                <span class="text-2xl font-bold text-gray-800">Sacada<span class="text-primary-600">Web</span></span>
+                <span class="text-2xl font-bold text-slate-900">Sacada<span class="text-primary-600">Web</span></span>
             </a>
-            <button id="close-menu-button" class="text-gray-600 hover:text-primary-600 focus:outline-none"><i class="fas fa-times text-3xl"></i></button>
+            <button id="close-menu-button" class="text-slate-600 hover:text-primary-600 p-2 focus:outline-none" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
         </div>
-        <nav class="flex-grow flex flex-col items-center justify-center space-y-8 px-6">
-            <a href="{{ url_for('home') }}#solucao-chefe" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Consultoria estratégica</a>
-            <a href="{{ url_for('home') }}#processo" class="text-3xl font-bold text-gray-700 hover:text-primary-600">Nosso processo</a>
-            <div class="flex flex-col items-center space-y-6 pt-4">
-                <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-3 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl transition-transform transform hover:scale-105">
-                    <i class="fab fa-whatsapp text-2xl"></i>
+        <nav class="flex-grow flex flex-col items-center justify-center space-y-6 px-6">
+            <a href="{{ url_for('home') }}#solucao-chefe" class="text-2xl font-semibold text-slate-800 hover:text-primary-600 transition">Consultoria estratégica</a>
+            <a href="{{ url_for('home') }}#processo" class="text-2xl font-semibold text-slate-800 hover:text-primary-600 transition">Nosso processo</a>
+            <a href="{{ url_for('educacao') }}" class="text-2xl font-semibold text-slate-800 hover:text-primary-600 transition">Para Escolas</a>
+            
+            <div class="flex flex-col items-center space-y-4 pt-6 w-full max-w-xs">
+                <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center space-x-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
+                    <i class="fab fa-whatsapp text-xl"></i>
                     <span>WhatsApp</span>
                 </a>
                 
-                <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-10 rounded-xl shadow text-xl transition-transform transform hover:scale-105">
+                <a href="{{ url_for('home') }}#contato" class="w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
                     Falar com especialista
                 </a>
             </div>
@@ -129,52 +169,56 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-slate-800 text-slate-300 py-16">
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="lg:col-span-2">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm"><i class="fas fa-rocket text-xl"></i></div>
-                        <span class="text-2xl font-bold text-white">Sacada<span class="text-primary-500">Web</span></span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm"><i class="fas fa-rocket text-lg"></i></div>
+                        <span class="text-2xl font-bold text-white tracking-tight">Sacada<span class="text-primary-500">Web</span></span>
                     </div>
-                    <p class="max-w-md">Automação e Inteligência Artificial para acelerar negócios. Transformamos seus processos manuais em sistemas eficientes que trabalham por você 24/7.</p>
+                    <p class="max-w-md text-slate-400 text-sm leading-relaxed">Automação e Inteligência Artificial para acelerar negócios. Transformamos seus processos manuais em sistemas eficientes e inteligentes que trabalham por você 24 horas por dia, 7 dias por semana.</p>
                 </div>
                 <div>
-                    <h3 class="text-white text-lg font-semibold mb-4">Links Úteis</h3>
-                    <ul class="space-y-3">
+                    <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Soluções</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="{{ url_for('home') }}#solucao-chefe" class="hover:text-white transition-colors">Consultoria em IA</a></li>
                         <li><a href="{{ url_for('educacao') }}" class="hover:text-white transition-colors">Solução para Educação</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Materiais Gratuitos</a></li>
+                        <li><a href="{{ url_for('chat_sacada') }}" class="hover:text-white transition-colors">Consultor Virtual Demo</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-white text-lg font-semibold mb-4">Contato</h3>
-                    <ul class="space-y-3">
-                        <li><a href="mailto:contato@sacadaweb.com.br" class="hover:text-white transition-colors">contato@sacadaweb.com.br</a></li>
-                        <li><span>Ribeirão Preto - SP</span></li>
+                    <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contato</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-center space-x-2"><i class="fas fa-envelope text-primary-500 text-xs"></i><a href="mailto:contato@sacadaweb.com.br" class="hover:text-white transition-colors">contato@sacadaweb.com.br</a></li>
+                        <li class="flex items-center space-x-2"><i class="fas fa-map-marker-alt text-primary-500 text-xs"></i><span>Ribeirão Preto - SP</span></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-slate-700 mt-12 pt-8 text-sm text-center">
-                <p class="mb-2">&copy; 2025 SacadaWeb. Todos os direitos reservados.</p>
-                <a href="{{ url_for('privacy_policy') }}" class="text-slate-400 hover:text-white transition-colors">Política de Privacidade</a>
+            <div class="border-t border-slate-900 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2025 SacadaWeb. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="{{ url_for('privacy_policy') }}" class="hover:text-slate-300 transition-colors">Política de Privacidade</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-xl max-w-sm w-full mx-4 p-8 text-center shadow-2xl">
-            <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-6">
-                <svg class="h-12 w-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+    <div id="successModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center z-50 hidden transition-all duration-300">
+        <div class="bg-white rounded-2xl max-w-sm w-full mx-4 p-8 text-center shadow-2xl animate-scale-in border border-slate-100">
+            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-emerald-100 text-emerald-600 mb-5">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
             </div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">Obrigado!</h2>
-            <p class="text-gray-600 mb-8">Seus dados foram recebidos. Entraremos em contato em breve!</p>
-            <button id="closeModalBtn" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg w-full transition-all">Fechar</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Mensagem Recebida!</h3>
+            <p class="text-slate-600 text-sm mb-6 leading-relaxed">Obrigado pelo contato. Nossa equipe de especialistas analisará sua solicitação e entrará em contato em breve.</p>
+            <button id="closeModalBtn" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-6 rounded-lg w-full transition-all shadow-md active:scale-[0.98]">Entendi</button>
         </div>
     </div>
-    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-500 ease-in-out">
+
+    <div id="consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md text-white p-4 shadow-2xl z-50 transform translate-y-full transition-transform duration-500 ease-in-out border-t border-slate-800">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-slate-300"><i class="fas fa-cookie-bite mr-2"></i>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com a nossa <a href="{{ url_for('privacy_policy') }}" target="_blank" class="font-semibold text-white underline hover:text-primary-300">Política de Privacidade</a>.</p>
-            <button id="accept-consent" class="flex-shrink-0 bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all">Entendi e aceito</button>
+            <p class="text-xs md:text-sm text-slate-300 flex items-center"><i class="fas fa-cookie-bite text-amber-400 mr-2.5 text-base"></i>Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você aceita nossa <a href="{{ url_for('privacy_policy') }}" target="_blank" class="font-medium text-white underline hover:text-primary-300 ml-1">Política de Privacidade</a>.</p>
+            <button id="accept-consent" class="flex-shrink-0 bg-primary-600 hover:bg-primary-700 text-white font-semibold text-xs py-2 px-5 rounded-lg shadow transition-all active:scale-[0.98]">Aceitar e prosseguir</button>
         </div>
     </div>
 
@@ -183,9 +227,9 @@
     <script type="module">
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
       createChat({
-        webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/6e7f6f68-9fcc-4a1f-bc77-11c8aadd1b9c/chat', // URL para demonstração
+        webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/6e7f6f68-9fcc-4a1f-bc77-11c8aadd1b9c/chat',
         target: '#n8n-chat',
-        mode: 'window', // Isso fará ele flutuar no canto
+        mode: 'window',
         showWelcomeScreen: false,
         initialMessages: ['Olá!'],
         bot: { name: 'SacadaWeb', avatar: '{{ url_for('static', filename="images/rocket.svg") }}' },
@@ -205,7 +249,7 @@
         const acceptButton = document.getElementById('accept-consent');
         if (consentBanner && acceptButton) {
             if (localStorage.getItem('privacyConsentSacadaWeb') !== 'true') {
-                setTimeout(() => { consentBanner.classList.remove('translate-y-full'); }, 500);
+                setTimeout(() => { consentBanner.classList.remove('translate-y-full'); }, 600);
             }
             acceptButton.addEventListener('click', () => {
                 localStorage.setItem('privacyConsentSacadaWeb', 'true');
@@ -232,10 +276,9 @@
             fullscreenMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
         }
       
-        // INICIALIZAÇÃO DO SWIPER (O PONTO DA CORREÇÃO)
         const swiper = new Swiper('.hero-slider', {
             loop: true,
-            autoplay: { delay: 8000, disableOnInteraction: false },
+            autoplay: { delay: 7000, disableOnInteraction: false },
             pagination: { el: '.swiper-pagination', clickable: true },
         });
   
@@ -248,8 +291,8 @@
             ];
             faqData.forEach(item => {
                 const faqItem = document.createElement('div');
-                faqItem.className = 'border border-gray-200 bg-white rounded-xl overflow-hidden';
-                faqItem.innerHTML = `<button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold hover:bg-slate-50"><span>${item.q}</span><i class="fas fa-chevron-down text-primary-600 transition-transform duration-300"></i></button><div class="faq-content hidden px-5 pb-5 pt-0 text-gray-600">${item.a}</div>`;
+                faqItem.className = 'border border-slate-200 bg-white rounded-xl overflow-hidden shadow-sm transition-all hover:border-slate-300';
+                faqItem.innerHTML = `<button class="faq-toggle w-full flex justify-between items-center p-5 text-left font-semibold hover:bg-slate-50 transition-colors"><span>${item.q}</span><i class="fas fa-chevron-down text-primary-600 text-sm transition-transform duration-300"></i></button><div class="faq-content hidden px-5 pb-5 pt-0 text-slate-600 text-sm leading-relaxed">${item.a}</div>`;
                 faqContainer.appendChild(faqItem);
             });
             faqContainer.addEventListener('click', (e) => {
@@ -265,10 +308,14 @@
   
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-                else { document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' }); }
+                if (targetId && targetId !== '#') {
+                    const targetEl = document.querySelector(targetId);
+                    if (targetEl) {
+                        e.preventDefault();
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             });
         });
   
