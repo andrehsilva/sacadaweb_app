@@ -37,6 +37,20 @@
         }
     </script>
     <style>
+        @font-face {
+            font-family: 'OpenCode';
+            src: url("{{ url_for('static', filename='fonts/OpenCode.otf') }}") format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        .opencode-wordmark {
+            font-family: 'OpenCode', 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-weight: 400;
+            letter-spacing: 0.035em;
+            line-height: 1;
+            text-transform: none;
+        }
         h1, h2, h3 { text-wrap: balance; }
         p { text-wrap: pretty; }
         
@@ -56,7 +70,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #2563eb;
+            background-color: #60a5fa;
             transition: width 0.3s ease-in-out;
             border-radius: 2px;
         }
@@ -111,54 +125,50 @@
 </head>
 <body class="font-sans antialiased text-slate-800 bg-white selection:bg-primary-500 selection:text-white">
 
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all duration-200">
+    <header class="bg-[#020b2d]/95 backdrop-blur-md border-b border-blue-900/50 sticky top-0 z-50 transition-all duration-200 shadow-lg shadow-slate-950/10">
         <div class="container mx-auto px-6 py-3.5 flex items-center justify-between">
-            <a href="{{ url_for('home') }}" class="flex items-center space-x-3 group">
-                <div class="bg-gradient-to-tr from-primary-700 to-primary-500 text-white p-2.5 rounded-xl shadow-md shadow-primary-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fas fa-rocket text-lg"></i>
-                </div>
-                <span class="text-2xl font-bold tracking-tight text-slate-900">Sacada<span class="text-primary-600">Web</span></span>
+            <a href="{{ url_for('home') }}" class="flex items-center group" aria-label="SacadaWeb">
+                <span class="opencode-wordmark text-3xl md:text-[2rem] text-white group-hover:text-blue-100 transition-colors">SacadaWeb</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="{{ url_for('home') }}#solucao-chefe" class="nav-link text-slate-700 font-medium hover:text-primary-600 transition text-sm">Consultoria estratégica</a>
-                <a href="{{ url_for('home') }}#processo" class="nav-link text-slate-700 font-medium hover:text-primary-600 transition text-sm">Nosso processo</a>
-                <a href="{{ url_for('educacao') }}" class="nav-link text-slate-700 font-medium hover:text-primary-600 transition text-sm">Para Escolas</a>
+                <a href="{{ url_for('home') }}#solucao-chefe" class="nav-link text-blue-100/85 font-medium hover:text-white transition text-sm">Consultoria estratégica</a>
+                <a href="{{ url_for('home') }}#processo" class="nav-link text-blue-100/85 font-medium hover:text-white transition text-sm">Nosso processo</a>
+                <a href="{{ url_for('educacao') }}" class="nav-link text-blue-100/85 font-medium hover:text-white transition text-sm">Para Escolas</a>
                 
                 <div class="flex items-center space-x-3.5 pl-2">
-                    <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md transition-all text-sm active:scale-[0.98]" title="Fale conosco pelo WhatsApp">
+                    <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold py-2 px-4 rounded-lg shadow-sm hover:shadow-md transition-all text-sm active:scale-[0.98]" title="Fale conosco pelo WhatsApp">
                         <i class="fab fa-whatsapp text-base"></i>
                         <span>WhatsApp</span>
                     </a>
                     
-                    <a href="{{ url_for('home') }}#contato" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded-lg shadow-sm shadow-primary-600/30 hover:shadow-md transition-all text-sm active:scale-[0.98]">
+                    <a href="{{ url_for('home') }}#contato" class="bg-white hover:bg-blue-50 text-[#020b2d] font-semibold py-2 px-4 rounded-lg shadow-sm shadow-blue-950/30 hover:shadow-md transition-all text-sm active:scale-[0.98]">
                         Falar com especialista
                     </a>
                 </div>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-slate-700 hover:text-primary-600 p-2 focus:outline-none" aria-label="Menu principal"><i class="fas fa-bars text-xl"></i></button>
+            <button id="mobile-menu-button" class="md:hidden text-blue-100 hover:text-white p-2 focus:outline-none" aria-label="Menu principal"><i class="fas fa-bars text-xl"></i></button>
         </div>
     </header>
 
-    <div id="fullscreen-menu" class="fixed inset-0 bg-white/98 backdrop-blur-lg z-50 flex flex-col transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between border-b border-slate-100">
-            <a href="{{ url_for('home') }}" class="flex items-center space-x-3">
-                <div class="bg-primary-600 text-white p-2 rounded-xl shadow-sm"><i class="fas fa-rocket text-xl"></i></div>
-                <span class="text-2xl font-bold text-slate-900">Sacada<span class="text-primary-600">Web</span></span>
+    <div id="fullscreen-menu" class="fixed inset-0 bg-[#020b2d] backdrop-blur-lg z-[60] flex flex-col transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between border-b border-blue-900/50">
+            <a href="{{ url_for('home') }}" class="flex items-center" aria-label="SacadaWeb">
+                <span class="opencode-wordmark text-3xl text-white">SacadaWeb</span>
             </a>
-            <button id="close-menu-button" class="text-slate-600 hover:text-primary-600 p-2 focus:outline-none" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
+            <button id="close-menu-button" class="text-blue-100 hover:text-white p-2 focus:outline-none" aria-label="Fechar menu"><i class="fas fa-times text-2xl"></i></button>
         </div>
         <nav class="flex-grow flex flex-col items-center justify-center space-y-6 px-6">
-            <a href="{{ url_for('home') }}#solucao-chefe" class="text-2xl font-semibold text-slate-800 hover:text-primary-600 transition">Consultoria estratégica</a>
-            <a href="{{ url_for('home') }}#processo" class="text-2xl font-semibold text-slate-800 hover:text-primary-600 transition">Nosso processo</a>
-            <a href="{{ url_for('educacao') }}" class="text-2xl font-semibold text-slate-800 hover:text-primary-600 transition">Para Escolas</a>
+            <a href="{{ url_for('home') }}#solucao-chefe" class="text-2xl font-semibold text-blue-100 hover:text-white transition">Consultoria estratégica</a>
+            <a href="{{ url_for('home') }}#processo" class="text-2xl font-semibold text-blue-100 hover:text-white transition">Nosso processo</a>
+            <a href="{{ url_for('educacao') }}" class="text-2xl font-semibold text-blue-100 hover:text-white transition">Para Escolas</a>
             
             <div class="flex flex-col items-center space-y-4 pt-6 w-full max-w-xs">
-                <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center space-x-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
+                <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center space-x-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
                     <i class="fab fa-whatsapp text-xl"></i>
                     <span>WhatsApp</span>
                 </a>
                 
-                <a href="{{ url_for('home') }}#contato" class="w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
+                <a href="{{ url_for('home') }}#contato" class="w-full text-center bg-white hover:bg-blue-50 text-[#020b2d] font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
                     Falar com especialista
                 </a>
             </div>
