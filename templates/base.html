@@ -60,6 +60,58 @@
             transition: width 0.3s ease-in-out;
             border-radius: 2px;
         }
+        #fullscreen-menu.is-open { opacity: 1; pointer-events: auto; }
+
+        .dark-site {
+            background: #020617;
+            color: #cbd5e1;
+        }
+        .dark-site section[class*="bg-white"],
+        .dark-site section[class*="bg-slate-50"],
+        .dark-site section[class*="bg-slate-100"],
+        .dark-site section[class*="bg-gray-50"],
+        .dark-site section[class*="bg-gray-100"] {
+            background-color: #020617 !important;
+            border-color: #1e293b !important;
+        }
+        .dark-site [class~="bg-white"],
+        .dark-site [class*="bg-white/"] {
+            background-color: #0f172a !important;
+        }
+        .dark-site [class~="bg-slate-50"],
+        .dark-site [class*="bg-slate-50/"],
+        .dark-site [class~="bg-slate-100"],
+        .dark-site [class~="bg-gray-50"],
+        .dark-site [class~="bg-gray-100"] {
+            background-color: #0b1220 !important;
+        }
+        .dark-site [class~="text-slate-900"],
+        .dark-site [class~="text-gray-900"] { color: #f8fafc !important; }
+        .dark-site [class~="text-slate-800"],
+        .dark-site [class~="text-gray-800"] { color: #e2e8f0 !important; }
+        .dark-site [class~="text-slate-700"],
+        .dark-site [class~="text-gray-700"] { color: #cbd5e1 !important; }
+        .dark-site [class~="text-slate-600"],
+        .dark-site [class~="text-gray-600"] { color: #94a3b8 !important; }
+        .dark-site [class~="text-slate-500"],
+        .dark-site [class~="text-gray-500"] { color: #64748b !important; }
+        .dark-site [class*="border-slate-100"],
+        .dark-site [class*="border-slate-200"],
+        .dark-site [class*="border-gray-100"],
+        .dark-site [class*="border-gray-200"] { border-color: #1e293b !important; }
+        .dark-site [class~="bg-primary-50"] { background-color: #172554 !important; }
+        .dark-site [class~="bg-primary-100"] { background-color: #1e3a8a !important; }
+        .dark-site [class~="bg-emerald-50"] { background-color: #052e2b !important; }
+        .dark-site [class~="bg-emerald-100"] { background-color: #064e3b !important; }
+        .dark-site [class~="bg-amber-50"] { background-color: #451a03 !important; }
+        .dark-site [class~="bg-amber-100"] { background-color: #78350f !important; }
+        .dark-site input,
+        .dark-site select {
+            background-color: #0f172a;
+            color: #f8fafc;
+            border-color: #334155;
+        }
+        .dark-site input::placeholder { color: #64748b; }
         .nav-link:hover::after { width: 100%; }
         .hero-gradient {
             background: linear-gradient(135deg, #000000 0%, #050b18 52%, #1d4ed8 100%);
@@ -112,7 +164,7 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased text-slate-800 bg-white selection:bg-primary-500 selection:text-white">
+<body class="font-sans antialiased text-slate-200 bg-slate-950 selection:bg-primary-500 selection:text-white">
 
     <header class="bg-black border-b border-blue-950/70 sticky top-0 z-50 transition-all duration-200 shadow-lg shadow-black/30">
         <div class="container mx-auto px-6 py-3.5 flex items-center justify-between">
@@ -130,9 +182,6 @@
                         <span>WhatsApp</span>
                     </a>
                     
-                    <a href="{{ url_for('home') }}#contato" class="bg-white hover:bg-blue-50 text-[#020b2d] font-semibold py-2 px-4 rounded-lg shadow-sm shadow-blue-950/30 hover:shadow-md transition-all text-sm active:scale-[0.98]">
-                        Falar com especialista
-                    </a>
                 </div>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-blue-100 hover:text-white p-2 focus:outline-none" aria-label="Menu principal"><i class="fas fa-bars text-xl"></i></button>
@@ -157,9 +206,6 @@
                     <span>WhatsApp</span>
                 </a>
                 
-                <a href="{{ url_for('home') }}#contato" class="w-full text-center bg-white hover:bg-blue-50 text-[#020b2d] font-semibold py-3 px-6 rounded-xl shadow transition text-lg">
-                    Falar com especialista
-                </a>
             </div>
         </nav>
     </div>
@@ -189,7 +235,7 @@
                 <div>
                     <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contato</h3>
                     <ul class="space-y-2.5 text-sm">
-                        <li class="flex items-center space-x-2"><i class="fas fa-envelope text-primary-500 text-xs"></i><a href="mailto:contato@sacadaweb.com.br" class="hover:text-white transition-colors">contato@sacadaweb.com.br</a></li>
+                        <li class="flex items-center space-x-2"><i class="fab fa-whatsapp text-emerald-400 text-xs"></i><a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Fale conosco pelo WhatsApp</a></li>
                         <li class="flex items-center space-x-2"><i class="fas fa-map-marker-alt text-primary-500 text-xs"></i><span>Ribeirão Preto - SP</span></li>
                     </ul>
                 </div>
