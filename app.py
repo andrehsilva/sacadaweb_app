@@ -55,12 +55,6 @@ def home():
     """Renderiza a página principal."""
     return render_template('index.html')
 
-@app.route('/educacao')
-def educacao():
-    """Renderiza a página dedicada ao setor educacional."""
-    return render_template('educacao.html')
-
-
 @app.route('/solucao')
 def solucao():
     """Renderiza a página dedicada a soluções."""
@@ -133,11 +127,6 @@ def contact():
 def demo_rotisseria():
     # Renderiza o arquivo chat.html que você enviou
     return render_template('chat.html')
-
-@app.route('/demo-educacao')
-def demo_educacao():
-    # Renderiza o futuro arquivo da escola (ex: escola.html)
-    return render_template('escola.html')
 
 @app.route('/chat-sacada')
 def chat_sacada():

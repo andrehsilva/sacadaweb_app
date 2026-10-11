@@ -86,29 +86,6 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                    <div class="text-center px-6">
-                        <div class="container mx-auto max-w-4xl">
-                            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
-                                SacadaEdu
-                            </span>
-                            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.15]">
-                                Tecnologia e IA para transformar <br class="hidden sm:inline">
-                                <span class="text-emerald-400">a gestão da sua escola.</span>
-                            </h1>
-                            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-                                Automatize matrículas, otimize a comunicação com os pais e tome decisões baseadas em indicadores com nossa solução educacional.
-                            </p>
-                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <a href="{{ url_for('educacao') }}"
-                                    class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 text-base">
-                                    Conhecer Solução para Educação
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="swiper-pagination !bottom-2"></div>
         </div>
@@ -169,7 +146,7 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+            <div class="grid gap-8 max-w-xl mx-auto items-stretch">
                 <!-- Card Consultor -->
                 <div class="relative group flex flex-col">
                     <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-blue-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
@@ -193,26 +170,6 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
                         
                         <a href="/chat-sacada" class="w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98]">
                             Falar com o Consultor <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card Escola -->
-                <div class="relative group flex flex-col">
-                    <div class="relative bg-white rounded-2xl shadow-md hover:shadow-soft-xl border border-slate-200 p-8 flex flex-col justify-between h-full transition duration-300">
-                        <div>
-                            <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
-                                <i class="fas fa-graduation-cap text-2xl"></i>
-                            </div>
-                            
-                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Escola Inteligente</h3>
-                            <p class="text-slate-600 leading-relaxed text-sm mb-6">
-                                Uma secretaria que nunca fecha. Experimente a IA especializada em tirar dúvidas de pais, explicar o processo de matrícula e agendar visitas escolares.
-                            </p>
-                        </div>
-                        
-                        <a href="/demo-educacao" class="w-full text-center bg-white border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 font-bold py-3 px-4 rounded-xl transition-all active:scale-[0.98]">
-                            Testar Secretaria <i class="fas fa-external-link-alt ml-2 text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -519,7 +476,7 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="mx-auto max-w-xl">
                 <!-- Negócios em Geral -->
                 <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-soft-xl transition-all">
                     <div>
@@ -534,23 +491,6 @@ Automação e IA para WhatsApp e Negócios | SacadaWeb
                     <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer"
                         class="w-full text-center bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold py-3.5 px-6 rounded-xl shadow transition-all active:scale-[0.98]">
                         Começar a Transformação
-                    </a>
-                </div>
-
-                <!-- Educação -->
-                <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-soft-xl transition-all">
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-6">
-                            <i class="fas fa-graduation-cap text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Para sua Escola</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
-                            Solução especializada para o setor educacional: automação de matrículas, atendimento a pais de alunos e integração de secretarias.
-                        </p>
-                    </div>
-                    <a href="{{ url_for('educacao') }}"
-                        class="w-full text-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3.5 px-6 rounded-xl shadow transition-all active:scale-[0.98]">
-                        Transformar minha Escola
                     </a>
                 </div>
             </div>
