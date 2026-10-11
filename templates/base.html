@@ -13,8 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -123,12 +121,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .gradient-text-amber {
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         @keyframes scaleIn {
             from { opacity: 0; transform: scale(0.92); }
             to { opacity: 1; transform: scale(1); }
@@ -212,19 +204,12 @@
 
     <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center">
                         <span class="text-2xl font-bold text-white tracking-tight">SacadaWeb</span>
                     </div>
                     <p class="max-w-md text-slate-400 text-sm leading-relaxed">Automação e Inteligência Artificial para acelerar negócios. Transformamos seus processos manuais em sistemas eficientes e inteligentes que trabalham por você 24 horas por dia, 7 dias por semana.</p>
-                </div>
-                <div>
-                    <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Soluções</h3>
-                    <ul class="space-y-2.5 text-sm">
-                        <li><a href="{{ url_for('home') }}#solucao-chefe" class="hover:text-white transition-colors">Consultoria em IA</a></li>
-                        <li><a href="{{ url_for('chat_sacada') }}" class="hover:text-white transition-colors">Consultor Virtual Demo</a></li>
-                    </ul>
                 </div>
                 <div>
                     <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contato</h3>
@@ -261,25 +246,6 @@
         </div>
     </div>
 
-    <div id="n8n-chat"></div>
-
-    <script type="module">
-      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-      createChat({
-        webhookUrl: 'https://sacadaweb-n8n-webhook.bzzuxj.easypanel.host/webhook/6e7f6f68-9fcc-4a1f-bc77-11c8aadd1b9c/chat',
-        target: '#n8n-chat',
-        mode: 'window',
-        showWelcomeScreen: false,
-        initialMessages: ['Olá!'],
-        bot: { name: 'SacadaWeb', avatar: '{{ url_for('static', filename="images/rocket.svg") }}' },
-        i18n: { 'pt-BR': { title: 'SacadaWeb', subtitle: 'Inteligência Artificial para Negócios!', inputPlaceholder: 'Olá, como posso ajudar você?' } },
-        chatInputKey: 'chatInput',
-        chatSessionKey: 'sessionId',
-        loadPreviousSession: true,
-        metadata: {},
-        defaultLanguage: 'pt-BR',
-      });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <script>
@@ -316,7 +282,7 @@
         }
       
         const swiper = new Swiper('.hero-slider', {
-            loop: true,
+            rewind: true,
             autoplay: { delay: 7000, disableOnInteraction: false },
             pagination: { el: '.swiper-pagination', clickable: true },
         });
