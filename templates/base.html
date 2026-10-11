@@ -202,28 +202,18 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
-                <div class="lg:col-span-2 space-y-4">
-                    <div class="flex items-center">
-                        <span class="text-2xl font-bold text-white tracking-tight">SacadaWeb</span>
-                    </div>
-                    <p class="max-w-md text-slate-400 text-sm leading-relaxed">Automação e Inteligência Artificial para acelerar negócios. Transformamos seus processos manuais em sistemas eficientes e inteligentes que trabalham por você 24 horas por dia, 7 dias por semana.</p>
-                </div>
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-900 py-8 md:py-10">
+        <div class="container mx-auto max-w-3xl px-6">
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 <div>
-                    <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Contato</h3>
-                    <ul class="space-y-2.5 text-sm">
-                        <li class="flex items-center space-x-2"><i class="fab fa-whatsapp text-emerald-400 text-xs"></i><a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SacadaWeb%20e%20gostaria%20de%20entender%20como%20a%20automa%C3%A7%C3%A3o%20e%20a%20intelig%C3%AAncia%20artificial%20podem%20otimizar%20o%20meu%20neg%C3%B3cio.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Fale conosco pelo WhatsApp</a></li>
-                        <li class="flex items-center space-x-2"><i class="fas fa-map-marker-alt text-primary-500 text-xs"></i><span>Ribeirão Preto - SP</span></li>
-                    </ul>
+                    <span class="block text-lg font-bold text-white tracking-tight mb-1.5">SacadaWeb</span>
+                    <p class="max-w-xs text-xs leading-relaxed">IA e automação para acelerar negócios. Ribeirão Preto - SP.</p>
                 </div>
+                <a href="https://wa.me/5516991122235?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20automatizar%20o%20atendimento%20da%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="text-xs hover:text-white transition-colors"><i class="fab fa-whatsapp mr-2 text-emerald-400"></i>(16) 99112-2235</a>
             </div>
-            <div class="border-t border-slate-900 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; 2025 SacadaWeb. Todos os direitos reservados.</p>
-                <div class="flex space-x-6">
-                    <a href="{{ url_for('privacy_policy') }}" class="hover:text-slate-300 transition-colors">Política de Privacidade</a>
-                </div>
+            <div class="mt-6 flex flex-col gap-2 border-t border-slate-900 pt-4 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+                <p>&copy; 2025 SacadaWeb.</p>
+                <a href="{{ url_for('privacy_policy') }}" class="hover:text-slate-300 transition-colors">Política de Privacidade</a>
             </div>
         </div>
     </footer>
